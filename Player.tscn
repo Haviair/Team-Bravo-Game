@@ -1,0 +1,95 @@
+[gd_scene load_steps=27 format=2]
+
+[ext_resource path="res://Player.gd" type="Script" id=2]
+[ext_resource path="res://Art/Archer run/Archer_Walk_4.png" type="Texture" id=3]
+[ext_resource path="res://Art/Archer run/Archer_Walk_3.png" type="Texture" id=4]
+[ext_resource path="res://Art/Archer run/Archer_Walk_1.png" type="Texture" id=5]
+[ext_resource path="res://Art/Archer run/Archer_Walk_2.png" type="Texture" id=6]
+[ext_resource path="res://Art/Archer run/Archer_Idle_1.png" type="Texture" id=7]
+[ext_resource path="res://Art/Archer run/Archer_Idle_2.png" type="Texture" id=8]
+[ext_resource path="res://Art/Archer run/Archer_Idle_3.png" type="Texture" id=9]
+[ext_resource path="res://Art/Archer run/Archer_Idle_4.png" type="Texture" id=10]
+[ext_resource path="res://Art/Player/hero8.png" type="Texture" id=11]
+[ext_resource path="res://Art/Player/hero11.png" type="Texture" id=12]
+[ext_resource path="res://Art/Player/hero13.png" type="Texture" id=13]
+[ext_resource path="res://Art/Player/hero15.png" type="Texture" id=14]
+[ext_resource path="res://Art/Player/hero12.png" type="Texture" id=15]
+[ext_resource path="res://Art/Player/hero10.png" type="Texture" id=16]
+[ext_resource path="res://Art/Player/hero2.png" type="Texture" id=17]
+[ext_resource path="res://Art/Player/hero6.png" type="Texture" id=18]
+[ext_resource path="res://Art/Player/hero7.png" type="Texture" id=19]
+[ext_resource path="res://Art/Player/hero9.png" type="Texture" id=20]
+[ext_resource path="res://Art/Player/hero14.png" type="Texture" id=21]
+[ext_resource path="res://Art/Player/hero3.png" type="Texture" id=22]
+[ext_resource path="res://Art/Player/hero1.png" type="Texture" id=23]
+[ext_resource path="res://Art/Player/hero4.png" type="Texture" id=24]
+[ext_resource path="res://Art/Player/hero5.png" type="Texture" id=25]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 32.348, 40.9011 )
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 5 ), ExtResource( 4 ), ExtResource( 3 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "Archer_Run_Right",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ), ExtResource( 9 ), ExtResource( 8 ), ExtResource( 10 ) ],
+"loop": true,
+"name": "Archer_Standing",
+"speed": 4.0
+}, {
+"frames": [ ExtResource( 23 ) ],
+"loop": true,
+"name": "Stand_Down",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 16 ), ExtResource( 12 ), ExtResource( 11 ), ExtResource( 20 ) ],
+"loop": true,
+"name": "Run_Side",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 17 ) ],
+"loop": true,
+"name": "Stand_Up",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ), ExtResource( 4 ), ExtResource( 3 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "Archer_Run_Left",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 22 ) ],
+"loop": true,
+"name": "Stand_Side",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 19 ), ExtResource( 18 ), ExtResource( 25 ), ExtResource( 24 ) ],
+"loop": true,
+"name": "Run_Down",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 15 ), ExtResource( 13 ), ExtResource( 21 ), ExtResource( 14 ) ],
+"loop": true,
+"name": "Run_Up",
+"speed": 5.0
+} ]
+
+[node name="Player" type="KinematicBody2D"]
+position = Vector2( 5.08965, -0.855944 )
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="ShootingCooldownTimer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 0.0860434, -1.83209 )
+scale = Vector2( 1.25, 1.25 )
+frames = SubResource( 2 )
+animation = "Stand_Down"
+playing = true

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Echo_Blue_Music_-_Evil_Has_Been_Done.mp3-847a739d2578a4d572a063fb6bed613e.mp3str"
+
+[deps]
+
+source_file="res://Music/Echo_Blue_Music_-_Evil_Has_Been_Done.mp3"
+dest_files=[ "res://.import/Echo_Blue_Music_-_Evil_Has_Been_Done.mp3-847a739d2578a4d572a063fb6bed613e.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
