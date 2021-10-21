@@ -8,6 +8,7 @@ var arrow = preload("res://Arrow.tscn")
 var velocity = Vector2()
 var direction = Vector2.DOWN
 var direction_radians = PI/2
+var hp = 100
 
 func get_input():
   velocity = Vector2()
@@ -62,7 +63,9 @@ func _physics_process(delta):
     $AnimatedSprite.play("Stand_Up")
   elif direction == Vector2.DOWN:
     $AnimatedSprite.play("Stand_Down")
-# 
+
+  if Input.is_action_just_pressed("Hurtme"):
+    hp -= 25
 
 func fire():
   var arrow_instance = arrow.instance()
