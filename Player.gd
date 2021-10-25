@@ -82,6 +82,3 @@ func fire():
     PI:
       arrow_instance.apply_central_impulse(Vector2(arrow_speed,0)*direction)
   get_tree().get_root().call_deferred("add_child", arrow_instance)
-
-
-
