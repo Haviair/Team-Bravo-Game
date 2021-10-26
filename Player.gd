@@ -67,6 +67,9 @@ func _physics_process(delta):
   if Input.is_action_just_pressed("Hurtme"):
     hp -= 25
 
+  if Input.is_action_just_pressed("ui_cancel"):
+    get_tree().quit( 0 )
+
 func fire():
   var arrow_instance = arrow.instance()
   arrow_instance.position = get_global_position()
@@ -83,5 +86,28 @@ func fire():
       arrow_instance.apply_central_impulse(Vector2(arrow_speed,0)*direction)
   get_tree().get_root().call_deferred("add_child", arrow_instance)
 
+const level = [
+  { 'StartPosition' : Vector2(  192, 236 )},
+  { 'StartPosition' : Vector2( 1775, 475 )}
+  ]
 
+var currentLevel : = 0
+
+# Move the player (and camera) to the indicated level.
+#   If the requested level is < 0, we just go to the start
+#   position on the current leve.
+#   If the requested level is greated than the number of levels,
+#   we just go to the first level.
+func gotoLevel( which : int = -1 ) -> void :
+  if which < 0 :
+    which = currentLevel
+
+  if which >= level.size() :
+    print( "Finished last level, so going back to the beginning." )
+    which = 0
+
+  # "Going to" a level means setting the Player to the start
+  #   position on that level and setting the left and right limits
+  #   of the camera view to the range that the level encompasses.
+  position = level[which][ 'StartPosition' ]
 
