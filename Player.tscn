@@ -1,5 +1,6 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=20 format=2]
 
+[ext_resource path="res://Camera2D.gd" type="Script" id=1]
 [ext_resource path="res://Player.gd" type="Script" id=2]
 [ext_resource path="res://Art/Player/hero8.png" type="Texture" id=11]
 [ext_resource path="res://Art/Player/hero11.png" type="Texture" id=12]
@@ -27,9 +28,9 @@ animations = [ {
 "name": "Stand_Side",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 16 ), ExtResource( 12 ), ExtResource( 11 ), ExtResource( 20 ) ],
+"frames": [ ExtResource( 15 ), ExtResource( 13 ), ExtResource( 21 ), ExtResource( 14 ) ],
 "loop": true,
-"name": "Run_Side",
+"name": "Run_Up",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 17 ) ],
@@ -37,9 +38,9 @@ animations = [ {
 "name": "Stand_Up",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 19 ), ExtResource( 18 ), ExtResource( 25 ), ExtResource( 24 ) ],
+"frames": [ ExtResource( 16 ), ExtResource( 12 ), ExtResource( 11 ), ExtResource( 20 ) ],
 "loop": true,
-"name": "Run_Down",
+"name": "Run_Side",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 23 ) ],
@@ -47,9 +48,9 @@ animations = [ {
 "name": "Stand_Down",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 15 ), ExtResource( 13 ), ExtResource( 21 ), ExtResource( 14 ) ],
+"frames": [ ExtResource( 19 ), ExtResource( 18 ), ExtResource( 25 ), ExtResource( 24 ) ],
 "loop": true,
-"name": "Run_Up",
+"name": "Run_Down",
 "speed": 5.0
 } ]
 
@@ -76,3 +77,11 @@ playing = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
+limit_left = 0
+limit_top = 0
+limit_right = 1280
+limit_bottom = 400
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
+smoothing_enabled = true
+script = ExtResource( 1 )

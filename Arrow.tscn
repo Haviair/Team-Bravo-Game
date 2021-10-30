@@ -11,7 +11,7 @@ extents = Vector2( 31.1576, 9.37253 )
 
 [node name="Arrow" type="RigidBody2D"]
 position = Vector2( 3.35979, 4.30473 )
-collision_layer = 0
+collision_layer = 4
 script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

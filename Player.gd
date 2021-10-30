@@ -69,6 +69,8 @@ func _physics_process(delta):
 
   if Input.is_action_just_pressed("ui_cancel"):
     get_tree().quit( 0 )
+    
+  if hp == 0: queue_free()
 
 func fire():
   var arrow_instance = arrow.instance()
@@ -87,17 +89,20 @@ func fire():
   get_tree().get_root().call_deferred("add_child", arrow_instance)
 
 const level = [
-  { 'StartPosition' : Vector2(  192, 236 )},
-  { 'StartPosition' : Vector2( 1775, 475 )}
+  { 'StartPosition' : Vector2(  200, 240 ), 'CameraLimits' : [  0, 1280, 0, 800 ] },
+  { 'StartPosition' : Vector2( 1600, 400 ), 'CameraLimits' : [ 1560, 2720, 0, 800 ] },
+  { 'StartPosition' : Vector2( 1120, 400 ), 'CameraLimits' : [ 0, 1280, 0, 800 ] },
+  { 'StartPosition' : Vector2( -320, 400 ), 'CameraLimits' : [ -2080, -160, -720, 1440 ] },
+  { 'StartPosition' : Vector2( 160, 400 ), 'CameraLimits' : [ 0, 1280, 0, 800 ] },
+  { 'StartPosition' : Vector2( 640, -320 ), 'CameraLimits' : [ 0, 1280, -960, -160 ] },
+  { 'StartPosition' : Vector2( 640, 160 ), 'CameraLimits' : [ 0, 1280, 0, 800 ] },
+  { 'StartPosition' : Vector2( 640, 1120 ), 'CameraLimits' : [ 0, 1280, 960, 1680 ] },
+  { 'StartPosition' : Vector2( 640, 640 ), 'CameraLimits' : [ 0, 1280, 0, 800 ] }
   ]
 
 var currentLevel : = 0
 
-# Move the player (and camera) to the indicated level.
-#   If the requested level is < 0, we just go to the start
-#   position on the current leve.
-#   If the requested level is greated than the number of levels,
-#   we just go to the first level.
+
 func gotoLevel( which : int = -1 ) -> void :
   if which < 0 :
     which = currentLevel
@@ -106,8 +111,9 @@ func gotoLevel( which : int = -1 ) -> void :
     print( "Finished last level, so going back to the beginning." )
     which = 0
 
-  # "Going to" a level means setting the Player to the start
-  #   position on that level and setting the left and right limits
-  #   of the camera view to the range that the level encompasses.
   position = level[which][ 'StartPosition' ]
+  $Camera2D.limit_left  = level[which][ 'CameraLimits' ][0]
+  $Camera2D.limit_right = level[which][ 'CameraLimits' ][1]
+  $Camera2D.limit_top = level[which][ 'CameraLimits' ][2]
+  $Camera2D.limit_bottom = level[which][ 'CameraLimits' ][3]
 
