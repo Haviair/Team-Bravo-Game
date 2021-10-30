@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 onready var shootcooldownTimer = $ShootingCooldownTimer
-
+onready var damagetimer = $DamageTimer
 var speed = 500
 var arrow_speed = 1000
 var arrow = preload("res://Arrow.tscn")
@@ -9,6 +9,8 @@ var velocity = Vector2()
 var direction = Vector2.DOWN
 var direction_radians = PI/2
 var hp = 100
+var enemy_in_body = false
+
 
 func get_input():
   velocity = Vector2()
@@ -64,8 +66,14 @@ func _physics_process(delta):
   elif direction == Vector2.DOWN:
     $AnimatedSprite.play("Stand_Down")
 
-  if Input.is_action_just_pressed("Hurtme"):
-    hp -= 25
+#  if Input.is_action_just_pressed("Hurtme"):
+#    hp -= 25
+
+  #Check if player has health left or not
+  if hp <= 0:
+    #TODO: killing player currently crashes game because of UI
+    #TODO: Instead of freeing player node, make a pop up screen 
+    queue_free()
 
 func fire():
   var arrow_instance = arrow.instance()
@@ -82,3 +90,17 @@ func fire():
     PI:
       arrow_instance.apply_central_impulse(Vector2(arrow_speed,0)*direction)
   get_tree().get_root().call_deferred("add_child", arrow_instance)
+  
+func _enemy_body_entered(body: Node):
+  if body.get_name() == 'Enemy':
+    enemy_in_body = true
+    hp -= 25
+    damagetimer.start()
+    
+func _enemy_body_exited(body: Node):
+  if body.get_name() == 'Enemy':
+    enemy_in_body = false
+    damagetimer.stop()
+    
+func _on_damage_timer_timeout():
+  hp -= 25
