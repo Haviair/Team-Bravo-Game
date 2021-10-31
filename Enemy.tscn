@@ -52,9 +52,10 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=10]
+extents = Vector2( 35.1532, 39.2048 )
 
-[sub_resource type="RectangleShape2D" id=11]
-extents = Vector2( 1669.76, 1014.68 )
+[sub_resource type="CircleShape2D" id=11]
+radius = 208.182
 
 [node name="Enemy" type="KinematicBody2D"]
 collision_layer = 4
@@ -66,6 +67,7 @@ frames = SubResource( 9 )
 animation = "Ghost"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 4.7622, -1.5874 )
 shape = SubResource( 10 )
 
 [node name="Detection Zone" type="Area2D" parent="."]
@@ -73,7 +75,7 @@ collision_layer = 4
 collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Detection Zone"]
-position = Vector2( 0, 1.7818 )
+position = Vector2( 0.20932, -0.166332 )
 shape = SubResource( 11 )
 
 [connection signal="body_entered" from="Detection Zone" to="." method="_on_Detection_Zone_body_entered"]
