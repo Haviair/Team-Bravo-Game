@@ -75,6 +75,11 @@ func _physics_process(delta):
     #TODO: Instead of freeing player node, make a pop up screen 
     queue_free()
 
+  if Input.is_action_just_pressed("ui_cancel"):
+    get_tree().quit( 0 )
+    
+  if hp == 0: queue_free()
+
 func fire():
   var arrow_instance = arrow.instance()
   arrow_instance.position = get_global_position()
@@ -104,3 +109,32 @@ func _enemy_body_exited(body: Node):
     
 func _on_damage_timer_timeout():
   hp -= 25
+
+const level = [
+  { 'StartPosition' : Vector2(  200, 240 ), 'CameraLimits' : [  0, 1280, 0, 800 ] },
+  { 'StartPosition' : Vector2( 1600, 400 ), 'CameraLimits' : [ 1560, 2720, 0, 800 ] },
+  { 'StartPosition' : Vector2( 1120, 400 ), 'CameraLimits' : [ 0, 1280, 0, 800 ] },
+  { 'StartPosition' : Vector2( -320, 400 ), 'CameraLimits' : [ -2080, -160, -720, 1440 ] },
+  { 'StartPosition' : Vector2( 160, 400 ), 'CameraLimits' : [ 0, 1280, 0, 800 ] },
+  { 'StartPosition' : Vector2( 640, -320 ), 'CameraLimits' : [ 0, 1280, -960, -160 ] },
+  { 'StartPosition' : Vector2( 640, 160 ), 'CameraLimits' : [ 0, 1280, 0, 800 ] },
+  { 'StartPosition' : Vector2( 640, 1120 ), 'CameraLimits' : [ 0, 1280, 960, 1680 ] },
+  { 'StartPosition' : Vector2( 640, 640 ), 'CameraLimits' : [ 0, 1280, 0, 800 ] }
+  ]
+
+var currentLevel : = 0
+
+
+func gotoLevel( which : int = -1 ) -> void :
+  if which < 0 :
+    which = currentLevel
+
+  if which >= level.size() :
+    print( "Finished last level, so going back to the beginning." )
+    which = 0
+
+  position = level[which][ 'StartPosition' ]
+  $Camera2D.limit_left  = level[which][ 'CameraLimits' ][0]
+  $Camera2D.limit_right = level[which][ 'CameraLimits' ][1]
+  $Camera2D.limit_top = level[which][ 'CameraLimits' ][2]
+  $Camera2D.limit_bottom = level[which][ 'CameraLimits' ][3]
