@@ -6,4 +6,6 @@ func _ready() -> void:
 
 
 func _on_Area2D_body_entered(body: Node) -> void:
+  if body.get_name() == "Enemy":
+    body.hit()
   queue_free()
