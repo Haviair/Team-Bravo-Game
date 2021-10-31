@@ -53,8 +53,8 @@ animations = [ {
 
 [sub_resource type="RectangleShape2D" id=10]
 
-[sub_resource type="CircleShape2D" id=11]
-radius = 104.577
+[sub_resource type="RectangleShape2D" id=11]
+extents = Vector2( 1669.76, 1014.68 )
 
 [node name="Enemy" type="KinematicBody2D"]
 collision_layer = 4
@@ -73,6 +73,7 @@ collision_layer = 4
 collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Detection Zone"]
+position = Vector2( 0, 1.7818 )
 shape = SubResource( 11 )
 
 [connection signal="body_entered" from="Detection Zone" to="." method="_on_Detection_Zone_body_entered"]
