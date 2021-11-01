@@ -16,9 +16,12 @@ config/icon="res://icon.png"
 
 [display]
 
-window/size/width=1535
-window/size/height=959
-window/size/fullscreen=true
+window/size/width=1280
+window/size/height=800
+window/size/test_width=1120
+window/size/test_height=700
+window/stretch/mode="viewport"
+window/stretch/aspect="keep"
 
 [input]
 
@@ -68,6 +71,10 @@ Hurtme={
 
 2d_physics/layer_1="World"
 2d_physics/layer_2="Player"
+
+2d_physics/layer_3="Enemy"
+2d_physics/layer_4="Weapon"
+
 
 [physics]
 

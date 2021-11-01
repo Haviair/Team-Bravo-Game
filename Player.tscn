@@ -1,5 +1,6 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=21 format=2]
 
+[ext_resource path="res://Camera2D.gd" type="Script" id=1]
 [ext_resource path="res://Player.gd" type="Script" id=2]
 [ext_resource path="res://Art/Player/hero8.png" type="Texture" id=11]
 [ext_resource path="res://Art/Player/hero11.png" type="Texture" id=12]
@@ -22,9 +23,14 @@ extents = Vector2( 32.348, 40.9011 )
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [ ExtResource( 22 ) ],
+"frames": [ ExtResource( 17 ) ],
 "loop": true,
-"name": "Stand_Side",
+"name": "Stand_Up",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 15 ), ExtResource( 13 ), ExtResource( 21 ), ExtResource( 14 ) ],
+"loop": true,
+"name": "Run_Up",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 16 ), ExtResource( 12 ), ExtResource( 11 ), ExtResource( 20 ) ],
@@ -32,14 +38,9 @@ animations = [ {
 "name": "Run_Side",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 17 ) ],
+"frames": [ ExtResource( 22 ) ],
 "loop": true,
-"name": "Stand_Up",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 19 ), ExtResource( 18 ), ExtResource( 25 ), ExtResource( 24 ) ],
-"loop": true,
-"name": "Run_Down",
+"name": "Stand_Side",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 23 ) ],
@@ -47,13 +48,18 @@ animations = [ {
 "name": "Stand_Down",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 15 ), ExtResource( 13 ), ExtResource( 21 ), ExtResource( 14 ) ],
+"frames": [ ExtResource( 19 ), ExtResource( 18 ), ExtResource( 25 ), ExtResource( 24 ) ],
 "loop": true,
-"name": "Run_Up",
+"name": "Run_Down",
 "speed": 5.0
 } ]
 
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 34.2497, 43.3213 )
+
 [node name="Player" type="KinematicBody2D"]
+collision_layer = 2
+collision_mask = 5
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_horizontal_guides_": [ 41.4881 ],
@@ -67,6 +73,9 @@ shape = SubResource( 1 )
 wait_time = 0.5
 one_shot = true
 
+[node name="DamageTimer" type="Timer" parent="."]
+wait_time = 0.75
+
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 0.0860434, -1.83209 )
 scale = Vector2( 1.25, 1.25 )
@@ -74,5 +83,27 @@ frames = SubResource( 2 )
 animation = "Stand_Side"
 playing = true
 
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 5
+__meta__ = {
+"_editor_description_": "Used to monitor when enemy is next to player for HP damage"
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource( 3 )
+
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
+limit_left = 0
+limit_top = 0
+limit_right = 1280
+limit_bottom = 400
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
+smoothing_enabled = true
+script = ExtResource( 1 )
+
+[connection signal="timeout" from="DamageTimer" to="." method="_on_damage_timer_timeout"]
+[connection signal="body_entered" from="Area2D" to="." method="_enemy_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_enemy_body_exited"]
