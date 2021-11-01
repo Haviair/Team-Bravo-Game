@@ -76,8 +76,8 @@ func _physics_process(delta):
   elif direction == Vector2.DOWN:
     $AnimatedSprite.play("Stand_Down")
 
-#  if Input.is_action_just_pressed("Hurtme"):
-#    hp -= 25
+  if Input.is_action_just_pressed("Hurtme"):
+    hp -= 25
 
   #Check if player has health left or not
   if hp <= 0:
