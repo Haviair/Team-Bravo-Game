@@ -78,6 +78,7 @@ func _physics_process(delta):
 
   if Input.is_action_just_pressed("Hurtme"):
     hp -= 25
+    get_tree().root.get_node("Graveyard_Level").get_node("CanvasLayer2").get_node("Player_UI").get_node("Healthbar").value = hp
 
   #Check if player has health left or not
   if hp <= 0:
@@ -109,6 +110,7 @@ func fire():
 func _enemy_body_entered(body: Node):
   if 'Enemy' in body.get_name():
     hp -= 25
+    get_tree().root.get_node("Graveyard_Level").get_node("CanvasLayer2").get_node("Player_UI").get_node("Healthbar").value = hp
     damagetimer.start()
     
 func _enemy_body_exited(body: Node):
@@ -117,6 +119,7 @@ func _enemy_body_exited(body: Node):
     
 func _on_damage_timer_timeout():
   hp -= 25
+  get_tree().root.get_node("Graveyard_Level").get_node("CanvasLayer2").get_node("Player_UI").get_node("Healthbar").value = hp
 
 func gotoLevel( which : int = -1 ) -> void :
   if which < 0 :
