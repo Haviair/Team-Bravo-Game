@@ -10,5 +10,3 @@ func _on_Area2D_body_entered(body: Node) -> void:
     body.hit()
   print(body.get_name())
   queue_free()
-
-

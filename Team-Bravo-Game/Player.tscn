@@ -38,9 +38,9 @@ animations = [ {
 "name": "Run_Side",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 19 ), ExtResource( 18 ), ExtResource( 25 ), ExtResource( 24 ) ],
+"frames": [ ExtResource( 22 ) ],
 "loop": true,
-"name": "Run_Down",
+"name": "Stand_Side",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 23 ) ],
@@ -48,9 +48,9 @@ animations = [ {
 "name": "Stand_Down",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 22 ) ],
+"frames": [ ExtResource( 19 ), ExtResource( 18 ), ExtResource( 25 ), ExtResource( 24 ) ],
 "loop": true,
-"name": "Stand_Side",
+"name": "Run_Down",
 "speed": 5.0
 } ]
 
@@ -74,6 +74,7 @@ wait_time = 0.5
 one_shot = true
 
 [node name="DamageTimer" type="Timer" parent="."]
+wait_time = 0.75
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 0.0860434, -1.83209 )
