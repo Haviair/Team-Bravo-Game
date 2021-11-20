@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Art/Tileset.png" type="Texture" id=2]
@@ -19,7 +19,6 @@
 [ext_resource path="res://Health.tscn" type="PackedScene" id=17]
 [ext_resource path="res://Old_Man.tscn" type="PackedScene" id=18]
 [ext_resource path="res://Chest.tscn" type="PackedScene" id=19]
-[ext_resource path="res://Arrow.tscn" type="PackedScene" id=20]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 80, 80, 0, 80, 0, 0, 80, 0 )
@@ -392,9 +391,4 @@ position = Vector2( -437.628, -240.22 )
 [node name="Chest" parent="." instance=ExtResource( 19 )]
 position = Vector2( -354.384, -218.814 )
 
-[node name="Arrow" parent="." instance=ExtResource( 20 )]
-visible = false
-
 [connection signal="body_entered" from="Chest" to="Chest" method="_on_Chest_body_entered"]
-[connection signal="body_entered" from="Arrow" to="Chest" method="_on_Arrow_body_entered"]
-[connection signal="body_shape_entered" from="Arrow" to="Chest" method="_on_Arrow_body_shape_entered"]

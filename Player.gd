@@ -9,6 +9,8 @@ var velocity = Vector2()
 var direction = Vector2.DOWN
 var direction_radians = PI/2
 var hp = 100
+var multishot = false
+var diagonalshot = false
 const level = [
   { 'StartPosition' : Vector2(  200, 240 ), 'CameraLimits' : [  0, 1280, 0, 800 ] },
   { 'StartPosition' : Vector2( 1600, 400 ), 'CameraLimits' : [ 1560, 2720, 0, 800 ] },
@@ -46,10 +48,15 @@ func get_input():
 
   if Input.is_action_just_pressed("shoot") and shootcooldownTimer.is_stopped():
     fire()
-    #Multi-Shot start
-    yield(get_tree().create_timer(0.15), "timeout")
-    fire()
-    #Multi-Shot end
+    if (diagonalshot == true):
+      diagnol_right_fire()
+      diagnol_left_fire()
+    if (multishot == true):
+      yield(get_tree().create_timer(0.15), "timeout")
+      fire()
+      if (diagonalshot == true):
+        diagnol_right_fire()
+        diagnol_left_fire()
     shootcooldownTimer.start()
 
 
@@ -105,6 +112,45 @@ func fire():
       arrow_instance.apply_central_impulse(Vector2(arrow_speed,0)*direction)
     PI:
       arrow_instance.apply_central_impulse(Vector2(arrow_speed,0)*direction)
+  get_tree().get_root().call_deferred("add_child", arrow_instance)
+  
+func diagnol_right_fire():
+  var arrow_instance = arrow.instance()
+  arrow_instance.position = get_global_position()
+  #arrow_instance.rotate(PI/4)
+  arrow_instance.gravity_scale = 0.0
+  match direction_radians:
+    (PI/2):
+      arrow_instance.rotate(PI/4)
+      arrow_instance.apply_central_impulse(Vector2(arrow_speed,700))
+    ((3*PI)/2):
+      arrow_instance.rotate(5*PI/4)
+      arrow_instance.apply_central_impulse(Vector2(-arrow_speed,-700))
+    0:
+      arrow_instance.rotate(PI/4)
+      arrow_instance.apply_central_impulse(Vector2(arrow_speed,700))
+    PI:
+      arrow_instance.rotate(5*PI/4)
+      arrow_instance.apply_central_impulse(Vector2(-arrow_speed,-700))
+  get_tree().get_root().call_deferred("add_child", arrow_instance)
+  
+func diagnol_left_fire():
+  var arrow_instance = arrow.instance()
+  arrow_instance.position = get_global_position()
+  arrow_instance.gravity_scale = 0.0
+  match direction_radians:
+    (PI/2):
+      arrow_instance.rotate(3*PI/4)
+      arrow_instance.apply_central_impulse(Vector2(-arrow_speed,700))
+    ((3*PI)/2):
+      arrow_instance.rotate(7*PI/4)
+      arrow_instance.apply_central_impulse(Vector2(arrow_speed,-700))
+    0:
+      arrow_instance.rotate(7*PI/4)
+      arrow_instance.apply_central_impulse(Vector2(arrow_speed,-700))
+    PI:
+      arrow_instance.rotate(3*PI/4)
+      arrow_instance.apply_central_impulse(Vector2(-arrow_speed,700))
   get_tree().get_root().call_deferred("add_child", arrow_instance)
   
 func _enemy_body_entered(body: Node):
