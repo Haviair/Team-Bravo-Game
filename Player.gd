@@ -9,8 +9,8 @@ var velocity = Vector2()
 var direction = Vector2.DOWN
 var direction_radians = PI/2
 var hp = 100
-var multishot = false
-var diagonalshot = false
+var multishot = true
+var diagonalshot = true
 const level = [
   { 'StartPosition' : Vector2(  200, 240 ), 'CameraLimits' : [  0, 1280, 0, 800 ] },
   { 'StartPosition' : Vector2( 1600, 400 ), 'CameraLimits' : [ 1560, 2720, 0, 800 ] },
@@ -47,6 +47,8 @@ func get_input():
   velocity = velocity.normalized() * speed
 
   if Input.is_action_just_pressed("shoot") and shootcooldownTimer.is_stopped():
+    $AudioStreamPlayer.stream = preload("res://Music/shoot.ogg")
+    $AudioStreamPlayer.play()
     fire()
     if (diagonalshot == true):
       diagnol_right_fire()
