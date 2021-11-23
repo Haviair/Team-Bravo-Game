@@ -9,8 +9,9 @@ var velocity = Vector2()
 var direction = Vector2.DOWN
 var direction_radians = PI/2
 var hp = 100
-var multishot = true
-var diagonalshot = true
+var multishot = false
+var diagonalshot = false
+var arrow_dmg = 10
 const level = [
   { 'StartPosition' : Vector2(  200, 240 ), 'CameraLimits' : [  0, 1280, 0, 800 ] },
   { 'StartPosition' : Vector2( 1600, 400 ), 'CameraLimits' : [ 1560, 2720, 0, 800 ] },
@@ -86,6 +87,8 @@ func _physics_process(delta):
     $AnimatedSprite.play("Stand_Down")
 
   if Input.is_action_just_pressed("Hurtme"):
+    $AudioStreamPlayer.stream = preload("res://Music/player_grunt.wav")
+    $AudioStreamPlayer.play()
     hp -= 25
     get_tree().root.get_node("Graveyard_Level").get_node("CanvasLayer2").get_node("Player_UI").get_node("Healthbar").value = hp
 
@@ -98,7 +101,10 @@ func _physics_process(delta):
   if Input.is_action_just_pressed("ui_cancel"):
     get_tree().quit( 0 )
     
-  if hp == 0: queue_free()
+  if hp == 0: 
+    $AudioStreamPlayer.stream = preload("res://Music/player_grunt.wav")
+    $AudioStreamPlayer.play()
+    queue_free()
 
 func fire():
   var arrow_instance = arrow.instance()
@@ -158,6 +164,8 @@ func diagnol_left_fire():
 func _enemy_body_entered(body: Node):
   if 'Enemy' in body.get_name():
     hp -= 25
+    $AudioStreamPlayer.stream = preload("res://Music/player_grunt.wav")
+    $AudioStreamPlayer.play()
     get_tree().root.get_node("Graveyard_Level").get_node("CanvasLayer2").get_node("Player_UI").get_node("Healthbar").value = hp
     damagetimer.start()
     
@@ -167,6 +175,8 @@ func _enemy_body_exited(body: Node):
     
 func _on_damage_timer_timeout():
   hp -= 25
+  $AudioStreamPlayer.stream = preload("res://Music/player_grunt.wav")
+  $AudioStreamPlayer.play()
   get_tree().root.get_node("Graveyard_Level").get_node("CanvasLayer2").get_node("Player_UI").get_node("Healthbar").value = hp
 
 func gotoLevel( which : int = -1 ) -> void :
@@ -182,3 +192,6 @@ func gotoLevel( which : int = -1 ) -> void :
   $Camera2D.limit_right = level[which][ 'CameraLimits' ][1]
   $Camera2D.limit_top = level[which][ 'CameraLimits' ][2]
   $Camera2D.limit_bottom = level[which][ 'CameraLimits' ][3]
+  
+func increase_dmg():
+  arrow_dmg += 10

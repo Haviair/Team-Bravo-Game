@@ -78,5 +78,8 @@ collision_mask = 3
 position = Vector2( 0.20932, -0.166332 )
 shape = SubResource( 11 )
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+volume_db = -30.0
+
 [connection signal="body_entered" from="Detection Zone" to="." method="_on_Detection_Zone_body_entered"]
 [connection signal="body_exited" from="Detection Zone" to="." method="_on_Detection_Zone_body_exited"]

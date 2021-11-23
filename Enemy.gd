@@ -18,6 +18,8 @@ func _physics_process(_delta):
     enemy_pos = move_and_slide(enemy_pos)
   
 func hit():
+  $AudioStreamPlayer.stream = preload("res://Music/ghost_grunt.wav")
+  $AudioStreamPlayer.play(0.35)
   if health <= 0:
     queue_free()
 
