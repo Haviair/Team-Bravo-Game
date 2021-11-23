@@ -1,13 +1,12 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=10 format=2]
 
-[ext_resource path="res://Art/castle_floor.png" type="Texture" id=1]
+[ext_resource path="res://Art/Castle_Background.png" type="Texture" id=1]
 [ext_resource path="res://Art/swords.png" type="Texture" id=2]
 [ext_resource path="res://Art/castle_wall.png" type="Texture" id=3]
 [ext_resource path="res://Art/shield.png" type="Texture" id=4]
 [ext_resource path="res://Art/torch.png" type="Texture" id=5]
 [ext_resource path="res://Art/castle_chest.png" type="Texture" id=6]
 [ext_resource path="res://Art/throne.png" type="Texture" id=7]
-[ext_resource path="res://Art/Background.png" type="Texture" id=8]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 80, 0, 80, 80, 0, 80 )
@@ -34,20 +33,6 @@ points = PoolVector2Array( 0, 0, 80, 0, 80, 80, 0, 80 )
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 0/z_index = 0
-1/name = "castle_floor.png 1"
-1/texture = ExtResource( 1 )
-1/tex_offset = Vector2( 0, 0 )
-1/modulate = Color( 1, 1, 1, 1 )
-1/region = Rect2( 0, 0, 80, 80 )
-1/tile_mode = 0
-1/occluder_offset = Vector2( 0, 0 )
-1/navigation_offset = Vector2( 0, 0 )
-1/shape_offset = Vector2( 0, 0 )
-1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-1/shape_one_way = false
-1/shape_one_way_margin = 0.0
-1/shapes = [  ]
-1/z_index = 0
 2/name = "castle_chest.png 2"
 2/texture = ExtResource( 6 )
 2/tex_offset = Vector2( 0, 0 )
@@ -133,11 +118,10 @@ layer = -10
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
 anchor_right = 1.0
 anchor_bottom = 0.995
-margin_left = 2.44714
-margin_top = -6.10352e-05
-margin_right = 1282.45
-margin_bottom = 800.0
-texture = ExtResource( 8 )
+margin_left = 2.0
+margin_right = 11.0
+margin_bottom = 16.0
+texture = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
