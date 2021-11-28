@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/ghost_grunt.wav-f667a9e35caeadae40477ea9d0f72620.sample"
+
+[deps]
+
+source_file="res://Music/ghost_grunt.wav"
+dest_files=[ "res://.import/ghost_grunt.wav-f667a9e35caeadae40477ea9d0f72620.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
