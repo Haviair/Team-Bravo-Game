@@ -8,5 +8,7 @@ func _ready() -> void:
 func _on_Area2D_body_entered(body: Node) -> void:
   if "Enemy" in body.get_name():
     body.hit()
-  print(body.get_name())
+  elif "Boss" in body.get_name():
+    body.hit()
+  #print(body.get_name())
   queue_free()
