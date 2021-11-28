@@ -38,7 +38,7 @@ animations = [ {
 extents = Vector2( 35.1532, 39.2048 )
 
 [sub_resource type="CircleShape2D" id=11]
-radius = 208.182
+radius = 401.916
 
 [node name="Boss" type="KinematicBody2D"]
 collision_layer = 4
