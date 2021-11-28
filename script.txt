@@ -1,0 +1,88 @@
+Game launched (via .exe? or code run in godot?)
+
+Will there be a splash screen (or multiple ones?) or directly jsut a start screen (will there be something like "press start {or any button?} to enter from the start screen?")
+
+Will there be options like "new game" and "continue" and "options menu"?
+
+"New game" is pressed or game starts directly -> the below dialogues appear on screen (white text with a dark background?)
+
+" Welcome to the world of....{WHATS THE NAME OF THE GAME??? or the name of the realm the game takes place in? [bharathland???] }. It is a land of many wonders and even more mysteries. It hasn't quite caught up to the modern world yet. "
+" This world is inhabited by all sorts of creatures {is bharath one of them? i know haviair is xD} and various races like elf, beastman, human to name some"
+" There are many things one can do to earn ones bread. One of the most profound professions is that of the warrior. There are several classes of warriors: swordsman, brute, mage, healer, archer. etc just to name some. Some join guilds, some work for the [govt/kingdom?] fulltime and some take missions on commission "
+" There is a heirarchy among the warrior classes that ranks one to be 'above' or 'better' than the other. The archer class is among the lowest and considered the weakest and looked down upon by every other "
+" Enter our HERO, a human warrior, an archer to be specific, who sets out to prove that the archer class is strong and reliable too and has its own merits and wants those around him to stop looking down on the class and remove their prejudice. "
+" He sets out to do this by completing demanding missions fruitfully and gaining the favor of the [govt/kingdom] "
+" He looks up the missions posted. He finds one statign that the local graveyard has been facing some vandalism and grave unearthings off late and that someone is to investigate the matter. Deciding he must start somewhere, he embarks on this mission "
+
+ENTER GRAVEYARD.
+HERO WAITS FOR SEVERAL HOURS AWAY FROM SIGHT
+ENTER BANDITS
+BANDITS GO ABOUT SLOWLY DOIGN BANDIT THINGS
+
+bandit 1 - " hatching an idea to make a quick buck selling valuables buried with the dead was a good one "
+
+bandit 2 - " these people are all DEAD, they wont be needing these anymore anyway. "
+
+HERO REVEALS HIMSELF AND MAKES HIS PRESENCE KNOWN
+
+hero - " STOP! let the departed rest in peace. you will all have to pay for your crimes "
+
+bandit 1 - " aint no punk ass weak mofo gonna stop me " PROCEEDS TO ATTACK
+
+the spirits of the departed, whose eternal rest was disturbed, have come, in the corporeal form of ghosts, to exact vengeance on their wrongdoers.
+the bandits take this as a sign to retreat with their tails tucked behind their legs.
+the hero however, must defeat them and let them go back to their eternal slumber.
+
+_
+_
+_
+
+
+LATER ON< WHEN THE MYSTERIOUS CHARATCER IS INTRODUCED
+
+? - " Greetings HERO! I have been watching your actions since you got here. These bandits need to be stopped. I can tell, you are doing this because of your sense of duty and respect to let the departed rest in peace. I can tell a LOT about a person at a glance. Your heart and mind tell me you are of good character. There is a lot you will achieve. Take this as a parting gift [proceeds to let hero choose an abulity]. We will surely meet again.  "
+
+
+>>>><<<<< LEVEL 2 SCRIPT
+
+"Upon successfully completing the mission tasked to him, the archer returns to the kingdom. Here he is met with yet another task, with not much time to rest. Such is the life of our hero."
+
+"The hero is informed that, while he was away, there have been some significant developments in the castle of Lahin. The castle of Lahin belongs to the old duke K S Lahin. The duke, after much turmoil and ill affair, has finally gone crazy in his old age. What is going through his mind, no one can tell. But we can be sure of one thing, he has taken his maidservants hostage in his own home, after locking them in for several weeks. Friends and strangers alike tried to reason with him, none were granted an audience in his castle nor were their words heeded"
+
+"The duke must be stopped and his hostages must be freed before harm comes their way. This is the immediate task of the hero now. After a few minutes of getting his bearings in place, he makes his way to Castle Lahin."
+
+ENTER CASTLE LAHIN.
+Lahin - "HALT. WHO GOES THERE"
+Hero - " I am here to put an end to this madness. Release your servants at once!"
+Lahin - " AHAHAHAHAHAH. YOU THINK U CAN STOP ME?!?! I Will sacrifice them to the powers of evil and gain their favor. ehehehe"
+Hero - " I can and I will! Let me in and I'll show you TRUE power..! "
+Lahin - "We'll see what power you can put on display! Mehehehe...."
+
+"after much back and forth, the hero is able to enter the premise of castle Lahin. He has no idea what kind of madness and foes he will encounter here. All he hopes to do is stop the duke and rescue those maidservants swiftly."
+
+AFTER CLEARING THE ROOMS THE HERO REACHES THE ROOM WITH THE DUKE
+
+Lahin - "Show me what you are capable of! " *Lahin attacks*
+
+AFTER BEATING LAHIN, MYSTERIOUS CHAR APPEARS
+
+MC - "Looks like I missed the good part. Just kidding! You have yet again saved the day. Kudos. As a personal token of appreciation from me, here [lets hero pick a powerup ability]. I am sure those ladies are very greatful and releived. Maybe, one might even give you a token of appreciation like me. [xD] "
+
+Hero - "I did what I had to, for the greater good. I have a ways to go still. I cannot let my CLASS down now."
+
+MC - "geez. GIve yourself a pat on the back. You just completed 2 whole missions back to back! Not to mention you saved these lovely ladies and made sure no harm came their way"
+
+Hero - "..."
+
+ENTER MAIDSERVANTS
+
+IN UNION - "THANK YOU SOO MUCH FOR SAVING US *in between sobs and snivels* "
+
+ONE OF THEM APPROACHES THE HERO. SHE IS A BEASTWOMAN WITH CAT EARS AND TAIL. [catgirl?]
+
+catgirl - "My saviour, please have this! It will hwlp protect you. Keep it on your person at all times, well, at least most of the time ahah."
+*hands him a [im thinking it would be good for the item to be a necklace. this item can improve stats. it doesnt have to be specifically equipped from an equipment menu, in case we are not goign with such a thing in the game. you ca just increase his defense stat after this dialogue/level].* 
+
+AFTER EVERYTHING, THE HERO TAKES HIS LEAVE AND RUNS INTO THE MC ONCE AGAIN.
+
+MC - "There has been a wave of ill occurences in and around the kingdom recently. I fear they are all connected, and are leadign up to some catastrophe waiting to happen. We must stay vigilant during these tryign times my hero. Rest now. You deserve it. We will meet again, soon. Let us see how much you will progress by then."
