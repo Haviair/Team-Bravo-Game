@@ -2,6 +2,8 @@ extends KinematicBody2D
 
 onready var shootcooldownTimer = $ShootingCooldownTimer
 onready var damagetimer = $DamageTimer
+onready var en_dmg_timer = $EnemyTimer
+
 var speed = 500
 var arrow_speed = 1000
 var arrow = preload("res://Arrow.tscn")
@@ -9,6 +11,7 @@ var velocity = Vector2()
 var direction = Vector2.DOWN
 var direction_radians = PI/2
 var hp = 100
+
 const level = [
   { 'StartPosition' : Vector2(  200, 240 ), 'CameraLimits' : [  0, 1280, 0, 800 ] },
   { 'StartPosition' : Vector2( 1600, 400 ), 'CameraLimits' : [ 1560, 2720, 0, 800 ] },
@@ -110,10 +113,15 @@ func _enemy_body_entered(body: Node):
   if 'Enemy' in body.get_name():
     hp -= 25
     damagetimer.start()
+  elif 'Boss' in body.get_name():
+    hp -= 25
+    en_dmg_timer.start()
     
 func _enemy_body_exited(body: Node):
   if 'Enemy' in body.get_name():
     damagetimer.stop()
+  elif 'Boss' in body.get_name():
+     en_dmg_timer.stop()
     
 func _on_damage_timer_timeout():
   hp -= 25
@@ -131,3 +139,4 @@ func gotoLevel( which : int = -1 ) -> void :
   $Camera2D.limit_right = level[which][ 'CameraLimits' ][1]
   $Camera2D.limit_top = level[which][ 'CameraLimits' ][2]
   $Camera2D.limit_bottom = level[which][ 'CameraLimits' ][3]
+
