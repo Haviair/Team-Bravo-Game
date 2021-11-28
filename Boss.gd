@@ -3,7 +3,7 @@ extends KinematicBody2D
 var enemy_pos: Vector2
 var run_speed = 350
 var player: Node
-var boss_hp = 15
+var boss_hp = 5
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
