@@ -1,25 +1,29 @@
+
 [gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Art/Tileset.png" type="Texture" id=2]
+[ext_resource path="res://Art/graveyard/Tileset.png" type="Texture" id=2]
 [ext_resource path="res://Music/ghost-town.ogg" type="AudioStream" id=3]
 [ext_resource path="res://Graveyard Level.gd" type="Script" id=4]
 [ext_resource path="res://Player UI.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Enemy.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Art/Prize-40x40.png" type="Texture" id=7]
-[ext_resource path="res://Art/Background.png" type="Texture" id=8]
-[ext_resource path="res://Art/walls.png" type="Texture" id=9]
-[ext_resource path="res://Art/tombstones.png" type="Texture" id=10]
-[ext_resource path="res://Art/grass.png" type="Texture" id=11]
-[ext_resource path="res://Art/willow.png" type="Texture" id=12]
-[ext_resource path="res://Art/torch.png" type="Texture" id=13]
-[ext_resource path="res://Art/church.png" type="Texture" id=14]
-[ext_resource path="res://Art/floor.png" type="Texture" id=15]
+[ext_resource path="res://Art/graveyard/Background.png" type="Texture" id=8]
+[ext_resource path="res://Art/graveyard/walls.png" type="Texture" id=9]
+[ext_resource path="res://Art/graveyard/tombstones.png" type="Texture" id=10]
+[ext_resource path="res://Art/graveyard/grass.png" type="Texture" id=11]
+[ext_resource path="res://Art/graveyard/willow.png" type="Texture" id=12]
+[ext_resource path="res://Art/graveyard/torch.png" type="Texture" id=13]
+[ext_resource path="res://Art/graveyard/church.png" type="Texture" id=14]
+[ext_resource path="res://Art/graveyard/floor.png" type="Texture" id=15]
 [ext_resource path="res://Portal.tscn" type="PackedScene" id=16]
+
 [ext_resource path="res://Old_Man.tscn" type="PackedScene" id=18]
 [ext_resource path="res://Chest.tscn" type="PackedScene" id=19]
 [ext_resource path="res://Arrow.tscn" type="PackedScene" id=20]
 [ext_resource path="res://Power-Ups.tscn" type="PackedScene" id=21]
+[ext_resource path="res://Boss.tscn" type="PackedScene" id=17]
+
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 80, 80, 0, 80, 0, 0, 80, 0 )
@@ -295,6 +299,9 @@ tile_data = PoolIntArray( -786432, 2, 0, -786431, 2, 0, -786430, 2, 0, -786429, 
 position = Vector2( 200, 240 )
 collision_mask = 13
 
+[node name="Boss" parent="." instance=ExtResource( 17 )]
+position = Vector2( -1308.45, 5.54047 )
+
 [node name="Enemy_1" parent="." instance=ExtResource( 6 )]
 position = Vector2( 659.451, -757.763 )
 
@@ -394,3 +401,6 @@ position = Vector2( -354.384, -218.814 )
 [node name="Power-Ups" parent="." instance=ExtResource( 21 )]
 
 [connection signal="body_entered" from="Chest" to="Chest" method="_on_Chest_body_entered"]
+
+margin_left = 6.32227
+margin_right = 6.32227
