@@ -86,6 +86,8 @@ one_shot = true
 
 [node name="DamageTimer" type="Timer" parent="."]
 
+[node name="EnemyTimer" type="Timer" parent="."]
+
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 0.0860434, -1.83209 )
 scale = Vector2( 1.25, 1.25 )
@@ -103,6 +105,9 @@ drag_margin_h_enabled = true
 drag_margin_v_enabled = true
 smoothing_enabled = true
 script = ExtResource( 1 )
+
+[connection signal="timeout" from="DamageTimer" to="." method="_on_damage_timer_timeout"]
+[connection signal="timeout" from="EnemyTimer" to="." method="_on_damage_timer_timeout"]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )

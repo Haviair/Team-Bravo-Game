@@ -2,6 +2,8 @@ extends KinematicBody2D
 
 onready var shootcooldownTimer = $ShootingCooldownTimer
 onready var damagetimer = $DamageTimer
+onready var en_dmg_timer = $EnemyTimer
+
 var speed = 500
 var arrow_speed = 1000
 var arrow = preload("res://Arrow.tscn")
@@ -9,9 +11,11 @@ var velocity = Vector2()
 var direction = Vector2.DOWN
 var direction_radians = PI/2
 var hp = 100
+
 var multishot = false
 var diagonalshot = false
 var arrow_dmg = 10
+
 const level = [
   { 'StartPosition' : Vector2(  200, 240 ), 'CameraLimits' : [  0, 1280, 0, 800 ] },
   { 'StartPosition' : Vector2( 1600, 400 ), 'CameraLimits' : [ 1560, 2720, 0, 800 ] },
@@ -168,10 +172,15 @@ func _enemy_body_entered(body: Node):
     $AudioStreamPlayer.play()
     get_tree().root.get_node("Graveyard_Level").get_node("CanvasLayer2").get_node("Player_UI").get_node("Healthbar").value = hp
     damagetimer.start()
+  elif 'Boss' in body.get_name():
+    hp -= 25
+    en_dmg_timer.start()
     
 func _enemy_body_exited(body: Node):
   if 'Enemy' in body.get_name():
     damagetimer.stop()
+  elif 'Boss' in body.get_name():
+     en_dmg_timer.stop()
     
 func _on_damage_timer_timeout():
   hp -= 25
@@ -195,3 +204,4 @@ func gotoLevel( which : int = -1 ) -> void :
   
 func increase_dmg():
   arrow_dmg += 10
+
