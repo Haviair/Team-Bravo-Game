@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/spr_ghost_hard.png-269c2413ec7668bbc22429e75570484d.stex"
+path="res://.import/_0001_Layer-2.png-9808cbb1258f6ddf20e9572cd8218a4d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Enemy/spr_ghost_hard.png"
-dest_files=[ "res://.import/spr_ghost_hard.png-269c2413ec7668bbc22429e75570484d.stex" ]
+source_file="res://Art/Boss/_0001_Layer-2.png"
+dest_files=[ "res://.import/_0001_Layer-2.png-9808cbb1258f6ddf20e9572cd8218a4d.stex" ]
 
 [params]
 
