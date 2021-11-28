@@ -38,6 +38,6 @@ func _on_Chest_body_entered(body) -> void:
       get_tree().get_root().call_deferred("add_child", dmgup_instance)
       
     $AnimatedSprite.play("Opened")
-    not_empty = true
+    not_empty = false
   else:
     pass
