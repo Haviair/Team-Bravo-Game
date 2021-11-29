@@ -16,7 +16,11 @@ var multishot = false
 var diagonalshot = false
 var arrow_dmg = 10
 
-const level = [
+var in_graveyard = true
+var in_castle = false
+var in_field = false
+
+const graveyard_level = [
   { 'StartPosition' : Vector2(  200, 240 ), 'CameraLimits' : [  0, 1280, 0, 800 ] },
   { 'StartPosition' : Vector2( 1600, 400 ), 'CameraLimits' : [ 1560, 2720, 0, 800 ] },
   { 'StartPosition' : Vector2( 1120, 400 ), 'CameraLimits' : [ 0, 1280, 0, 800 ] },
@@ -27,6 +31,13 @@ const level = [
   { 'StartPosition' : Vector2( 640, 1120 ), 'CameraLimits' : [ 0, 1280, 960, 1680 ] },
   { 'StartPosition' : Vector2( 640, 640 ), 'CameraLimits' : [ 0, 1280, 0, 800 ] }
   ]
+
+const castle_level = [
+  { 'StartPosition' : Vector2(  160, 320 ), 'CameraLimits' : [  0, 1280, 0, 800 ] },
+  { 'StartPosition' : Vector2( 1600, 400 ), 'CameraLimits' : [ 1560, 2720, 0, 800 ] },
+  { 'StartPosition' : Vector2( 2080, 40 ), 'CameraLimits' : [ -960, -240, 1436, 2724 ] }
+  ]
+
 var currentLevel : = 0
 
 func get_input():
@@ -189,18 +200,33 @@ func _on_damage_timer_timeout():
   get_tree().root.get_node("Graveyard_Level").get_node("CanvasLayer2").get_node("Player_UI").get_node("Healthbar").value = hp
 
 func gotoLevel( which : int = -1 ) -> void :
-  if which < 0 :
-    which = currentLevel
+  if in_graveyard == true:
+    if which < 0 :
+      which = currentLevel
 
-  if which >= level.size() :
-    print( "Finished last level, so going back to the beginning." )
-    which = 0
+    if which >= graveyard_level.size() :
+      print( "Finished last level, so going back to the beginning." )
+      which = 0
 
-  position = level[which][ 'StartPosition' ]
-  $Camera2D.limit_left  = level[which][ 'CameraLimits' ][0]
-  $Camera2D.limit_right = level[which][ 'CameraLimits' ][1]
-  $Camera2D.limit_top = level[which][ 'CameraLimits' ][2]
-  $Camera2D.limit_bottom = level[which][ 'CameraLimits' ][3]
+    position = graveyard_level[which][ 'StartPosition' ]
+    $Camera2D.limit_left  = graveyard_level[which][ 'CameraLimits' ][0]
+    $Camera2D.limit_right = graveyard_level[which][ 'CameraLimits' ][1]
+    $Camera2D.limit_top = graveyard_level[which][ 'CameraLimits' ][2]
+    $Camera2D.limit_bottom = graveyard_level[which][ 'CameraLimits' ][3]
+  
+  elif in_castle == true:
+    if which < 0 :
+      which = currentLevel
+
+    if which >= castle_level.size() :
+      print( "Finished last level, so going back to the beginning." )
+      which = 0
+
+    position = castle_level[which][ 'StartPosition' ]
+    $Camera2D.limit_left  = castle_level[which][ 'CameraLimits' ][0]
+    $Camera2D.limit_right = castle_level[which][ 'CameraLimits' ][1]
+    $Camera2D.limit_top = castle_level[which][ 'CameraLimits' ][2]
+    $Camera2D.limit_bottom = castle_level[which][ 'CameraLimits' ][3]
   
 func increase_dmg():
   arrow_dmg += 10
