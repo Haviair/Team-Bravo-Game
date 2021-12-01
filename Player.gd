@@ -166,6 +166,7 @@ func diagnol_left_fire():
   get_tree().get_root().call_deferred("add_child", arrow_instance)
   
 func _enemy_body_entered(body: Node):
+#  print(body.get_name())
   if 'Enemy' in body.get_name():
     hp -= 25
     $AudioStreamPlayer.stream = preload("res://Music/player_grunt.wav")
