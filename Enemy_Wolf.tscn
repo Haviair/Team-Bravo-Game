@@ -14,103 +14,102 @@ region = Rect2( 320, 960, 160, 320 )
 [sub_resource type="AtlasTexture" id=3]
 flags = 4
 atlas = ExtResource( 1 )
-region = Rect2( 0, 640, 160, 320 )
+region = Rect2( 0, 1280, 160, 320 )
 
 [sub_resource type="AtlasTexture" id=4]
 flags = 4
 atlas = ExtResource( 1 )
-region = Rect2( 160, 640, 160, 320 )
+region = Rect2( 160, 1280, 160, 320 )
 
 [sub_resource type="AtlasTexture" id=5]
 flags = 4
 atlas = ExtResource( 1 )
-region = Rect2( 320, 640, 160, 320 )
+region = Rect2( 320, 1280, 160, 320 )
 
 [sub_resource type="AtlasTexture" id=6]
 flags = 4
 atlas = ExtResource( 1 )
-region = Rect2( 480, 640, 160, 320 )
+region = Rect2( 480, 1280, 160, 320 )
 
 [sub_resource type="AtlasTexture" id=7]
 flags = 4
 atlas = ExtResource( 1 )
-region = Rect2( 0, 1280, 160, 320 )
+region = Rect2( 640, 1280, 160, 320 )
 
 [sub_resource type="AtlasTexture" id=8]
 flags = 4
 atlas = ExtResource( 1 )
-region = Rect2( 160, 1280, 160, 320 )
+region = Rect2( 0, 640, 160, 320 )
 
 [sub_resource type="AtlasTexture" id=9]
 flags = 4
 atlas = ExtResource( 1 )
-region = Rect2( 320, 1280, 160, 320 )
+region = Rect2( 160, 640, 160, 320 )
 
 [sub_resource type="AtlasTexture" id=10]
 flags = 4
 atlas = ExtResource( 1 )
-region = Rect2( 480, 1280, 160, 320 )
+region = Rect2( 320, 640, 160, 320 )
 
 [sub_resource type="AtlasTexture" id=11]
 flags = 4
 atlas = ExtResource( 1 )
-region = Rect2( 640, 1280, 160, 320 )
+region = Rect2( 480, 640, 160, 320 )
 
-[sub_resource type="AtlasTexture" id=14]
+[sub_resource type="AtlasTexture" id=12]
 flags = 4
 atlas = ExtResource( 1 )
 region = Rect2( 0, 640, 160, 320 )
 
-[sub_resource type="AtlasTexture" id=15]
+[sub_resource type="AtlasTexture" id=13]
 flags = 4
 atlas = ExtResource( 1 )
 region = Rect2( 160, 640, 160, 320 )
 
-[sub_resource type="AtlasTexture" id=16]
+[sub_resource type="AtlasTexture" id=14]
 flags = 4
 atlas = ExtResource( 1 )
 region = Rect2( 320, 640, 160, 320 )
 
-[sub_resource type="AtlasTexture" id=17]
+[sub_resource type="AtlasTexture" id=15]
 flags = 4
 atlas = ExtResource( 1 )
 region = Rect2( 480, 640, 160, 320 )
 
-[sub_resource type="SpriteFrames" id=12]
+[sub_resource type="SpriteFrames" id=16]
 animations = [ {
 "frames": [ SubResource( 2 ) ],
 "loop": true,
 "name": "Stand",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ) ],
-"loop": true,
-"name": "Run",
-"speed": 15.0
-}, {
-"frames": [ SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ) ],
+"frames": [ SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ) ],
 "loop": true,
 "name": "Pounce",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ) ],
+"frames": [ SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ) ],
+"loop": true,
+"name": "Run",
+"speed": 15.0
+}, {
+"frames": [ SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ) ],
 "loop": true,
 "name": "Walk",
 "speed": 5.0
 } ]
 
-[sub_resource type="CircleShape2D" id=13]
+[sub_resource type="CircleShape2D" id=17]
 radius = 937.437
 
 [sub_resource type="RectangleShape2D" id=18]
-extents = Vector2( 166.053, 63.0008 )
+extents = Vector2( 35.3423, 68.9182 )
 
 [node name="KinematicBody2D" type="KinematicBody2D"]
 position = Vector2( -1.18921, 0 )
 scale = Vector2( 0.5, 0.5 )
 script = ExtResource( 2 )
 __meta__ = {
-"_edit_group_": true,
 "_edit_horizontal_guides_": [ -350.204 ],
 "_edit_vertical_guides_": [ 63.4619 ]
 }
@@ -122,14 +121,14 @@ shape = SubResource( 1 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( -0.889893, 1.7798 )
 rotation = 4.71239
-frames = SubResource( 12 )
+frames = SubResource( 16 )
 animation = "Stand"
 playing = true
 
 [node name="Danger_Zone" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Danger_Zone"]
-shape = SubResource( 13 )
+shape = SubResource( 17 )
 
 [node name="Attack_Timer" type="Timer" parent="."]
 one_shot = true
@@ -137,11 +136,12 @@ one_shot = true
 [node name="Walk_Timer" type="Timer" parent="."]
 one_shot = true
 
-[node name="Area2D2" type="Area2D" parent="."]
+[node name="Against" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Against"]
+position = Vector2( 133.849, 0 )
 shape = SubResource( 18 )
 
 [connection signal="body_entered" from="Danger_Zone" to="." method="_on_Area2D_body_entered"]
 [connection signal="body_exited" from="Danger_Zone" to="." method="_on_Area2D_body_exited"]
-[connection signal="body_entered" from="Area2D2" to="." method="_on_Area2D2_body_entered"]
+[connection signal="body_entered" from="Against" to="." method="_on_Against_body_entered"]

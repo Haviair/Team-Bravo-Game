@@ -4,7 +4,8 @@ onready var attackTimer = $Attack_Timer
 
 onready var idleTimer = $Walk_Timer
 
-var speed = 750
+var speed = 1000
+var walk_speed = 150
 var velocity = Vector2.ZERO
 var blast = preload("res://MageBlast.tscn")
 var health = 30
@@ -21,10 +22,10 @@ func _physics_process(_delta):
     if attackTimer.is_stopped():
       $AnimatedSprite.play("Run")
       enemy_pos = move_and_slide(enemy_pos)
-#  elif idleTimer.is_stopped():
-#    #idle_walk()
-#    idleTimer.start()
-#  velocity = move_and_slide(velocity)
+  elif idleTimer.is_stopped():
+    idle_walk()
+    idleTimer.start()
+  velocity = move_and_slide(velocity)
 
 func hit():
   if health <= 0:
@@ -34,16 +35,16 @@ func _on_Area2D_body_entered(body: Node) -> void:
   if body.get_name() == 'Player':
     player = body
     danger_zone = true 
-    look_at(player.get_global_position())
     pounce()
-    enemy_pos = self.position.direction_to(player.position)*speed
 
 func pounce():
   if player != null:
     look_at(player.get_global_position())
+    enemy_pos = self.position.direction_to(player.position)*speed
   velocity = move_and_slide(Vector2.ZERO)
   $AnimatedSprite.play("Pounce")
   attackTimer.start()
+  print("I am running")
 
 
 func _on_Area2D_body_exited(body: Node) -> void:
@@ -60,27 +61,37 @@ func idle_walk():
     
     if my_random_number == 1:
       velocity.x += 1
-      $AnimatedSprite.play("Walk-Right")
+      $AnimatedSprite.play("Walk") #right
+      self.position.direction_to(Vector2.RIGHT)
+      look_at(self.get_global_position() + Vector2(1, 0))
     elif my_random_number == 2:
       velocity.x -= 1
-      $AnimatedSprite.play("Walk-Left")
+      $AnimatedSprite.play("Walk") #left
+      self.position.direction_to(Vector2.LEFT)
+      look_at(self.get_global_position() + Vector2(-1, 0))
     elif my_random_number == 3:
       velocity.y += 1
-      $AnimatedSprite.play("Walk-Down")
+      $AnimatedSprite.play("Walk") #down
+      self.position.direction_to(Vector2.DOWN)
+      look_at(self.get_global_position() + Vector2(0, 1))
     elif my_random_number == 4:
       velocity.y -= 1
-      $AnimatedSprite.play("Walk-Up")
+      $AnimatedSprite.play("Walk") #up
+      self.position.direction_to(Vector2.UP)
+      look_at(self.get_global_position() + Vector2(0, -1))
     elif my_random_number == 5:
       velocity.y = 0
       velocity.x = 0
-      $AnimatedSprite.play("Stand-Down")
-    velocity = velocity.normalized() * speed
+      $AnimatedSprite.play("Stand") #nothing
+      self.position.direction_to(Vector2.DOWN)
+    velocity = velocity.normalized() * walk_speed
     
 
-func _on_Area2D2_body_entered(body: Node) -> void:
-  danger_zone = false
-  velocity = move_and_slide(Vector2.ZERO)
-  attackTimer.start()
-  pounce()
-  yield(get_tree().create_timer(1.0), "timeout")
-  danger_zone = true
+func _on_Against_body_entered(body: Node) -> void:
+  print(body.get_name())
+  if body.get_name() == "Map Layout" and player == null:
+    idle_walk()
+  elif body.get_name() == "Map Layout" and player != null:
+    pounce()
+  elif body.get_name() == "Player":
+    pounce()

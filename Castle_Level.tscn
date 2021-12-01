@@ -260,6 +260,10 @@ points = PoolVector2Array( 0, 0, 82, 1, 82, 103, 0, 102 )
 15/z_index = 0
 
 [node name="Castle Level" type="Node2D"]
+__meta__ = {
+"_edit_horizontal_guides_": [ -321.685 ],
+"_edit_vertical_guides_": [ 2078.72 ]
+}
 
 [node name="Map Layout" type="TileMap" parent="."]
 tile_set = SubResource( 7 )
