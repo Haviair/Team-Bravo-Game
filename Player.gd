@@ -34,8 +34,9 @@ const graveyard_level = [
 
 const castle_level = [
   { 'StartPosition' : Vector2(  160, 320 ), 'CameraLimits' : [  0, 1280, 0, 800 ] },
-  { 'StartPosition' : Vector2( 1600, 400 ), 'CameraLimits' : [ 1560, 2720, 0, 800 ] },
-  { 'StartPosition' : Vector2( 2080, 40 ), 'CameraLimits' : [ -960, -240, 1436, 2724 ] }
+  { 'StartPosition' : Vector2( 1600, 400 ), 'CameraLimits' : [ 1440, 2720, 0, 800 ] },
+  { 'StartPosition' : Vector2( 1120, 400 ), 'CameraLimits' : [ 0, 1280, 0, 800 ]},
+  { 'StartPosition' : Vector2( 2080, -320 ), 'CameraLimits' : [ 1440, 2720, -960, -160 ]}
   ]
 
 var currentLevel : = 0
