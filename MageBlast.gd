@@ -1,7 +1,7 @@
 extends RigidBody2D
 
 var blast_speed = 600
-var blast_dmg = 25
+var blast_dmg = 10
 
 func _ready() -> void:
   apply_impulse(Vector2(), Vector2(blast_speed, 0).rotated(rotation))

@@ -90,22 +90,22 @@ func _physics_process(delta):
   elif direction == Vector2.DOWN:
     $AnimatedSprite.play("Stand_Down")
 
-  if Input.is_action_just_pressed("Hurtme"):
-    $AudioStreamPlayer.stream = preload("res://Music/player_grunt.wav")
-    $AudioStreamPlayer.play()
-    hp -= 25
-    get_tree().root.get_node("Graveyard_Level").get_node("CanvasLayer2").get_node("Player_UI").get_node("Healthbar").value = hp
+#  if Input.is_action_just_pressed("Hurtme"):
+#    $AudioStreamPlayer.stream = preload("res://Music/player_grunt.wav")
+#    $AudioStreamPlayer.play()
+#    hp -= 10
+#    get_tree().root.get_node("Graveyard_Level").get_node("CanvasLayer2").get_node("Player_UI").get_node("Healthbar").value = hp
 
-  #Check if player has health left or not
-  if hp <= 0:
-    #TODO: killing player currently crashes game because of UI
-    #TODO: Instead of freeing player node, make a pop up screen 
-    queue_free()
+#  #Check if player has health left or not
+#  if hp <= 0:
+#    #TODO: killing player currently crashes game because of UI
+#    #TODO: Instead of freeing player node, make a pop up screen 
+#    queue_free()
 
   if Input.is_action_just_pressed("ui_cancel"):
     get_tree().quit( 0 )
     
-  if hp == 0: 
+  if hp <= 0: 
     $AudioStreamPlayer.stream = preload("res://Music/player_grunt.wav")
     $AudioStreamPlayer.play()
     queue_free()
@@ -168,13 +168,13 @@ func diagnol_left_fire():
 func _enemy_body_entered(body: Node):
 #  print(body.get_name())
   if 'Enemy' in body.get_name():
-    hp -= 25
+    hp -= 10
     $AudioStreamPlayer.stream = preload("res://Music/player_grunt.wav")
     $AudioStreamPlayer.play()
     get_tree().root.get_node("Graveyard_Level").get_node("CanvasLayer2").get_node("Player_UI").get_node("Healthbar").value = hp
     damagetimer.start()
   elif 'Boss' in body.get_name():
-    hp -= 25
+    hp -= 10
     get_tree().root.get_node("Graveyard_Level").get_node("CanvasLayer2").get_node("Player_UI").get_node("Healthbar").value = hp
     en_dmg_timer.start()
     
@@ -185,7 +185,7 @@ func _enemy_body_exited(body: Node):
      en_dmg_timer.stop()
     
 func _on_damage_timer_timeout():
-  hp -= 25
+  hp -= 10
   $AudioStreamPlayer.stream = preload("res://Music/player_grunt.wav")
   $AudioStreamPlayer.play()
   get_tree().root.get_node("Graveyard_Level").get_node("CanvasLayer2").get_node("Player_UI").get_node("Healthbar").value = hp

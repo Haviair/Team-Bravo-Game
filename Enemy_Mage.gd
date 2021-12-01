@@ -12,8 +12,6 @@ var danger_zone = false
 var player: Node
 var angle
 
-var blast_dmg = 25
-
 func _ready() -> void:
   pass # Replace with function body.
 
@@ -40,7 +38,7 @@ func _on_Area2D_body_entered(body: Node) -> void:
   if body.get_name() == 'Player':
     player = body
     danger_zone = true 
-    shootcooldownTimer.start()
+    #shootcooldownTimer.start()
 
 func fire():
   var blast_instance = blast.instance()
