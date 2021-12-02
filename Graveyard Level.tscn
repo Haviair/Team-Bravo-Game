@@ -399,7 +399,7 @@ position = Vector2( -354.384, -218.814 )
 [node name="Power-Ups" parent="." instance=ExtResource( 21 )]
 
 [node name="Enemy_Mage" parent="." instance=ExtResource( 22 )]
-position = Vector2( 218.565, 574.792 )
+position = Vector2( 1725.45, -458.949 )
 
 [node name="Enemy_Wolf" parent="." instance=ExtResource( 20 )]
 position = Vector2( 759.622, 432.28 )
