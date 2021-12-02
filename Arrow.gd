@@ -11,5 +11,7 @@ func _on_Area2D_body_entered(body: Node) -> void:
     body.hit()
   elif "Boss" in body.get_name():
     body.hit()
+  elif "Witch" in body.get_name():
+    body.hit()
   #print(body.get_name())
   queue_free()
