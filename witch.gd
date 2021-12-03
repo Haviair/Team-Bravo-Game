@@ -41,7 +41,7 @@ func _on_Follow_Detection_body_exited(body):
 func _on_Orb_Zone_body_entered(body):
   if body.get_name() == 'Player':
     #Stop following
-    $AnimatedSprite.play("idle")
+    $AnimatedSprite.play("charge")
     follow_act = false
     #Fire an orb and start timer
     fire_orb()
@@ -50,6 +50,7 @@ func _on_Orb_Zone_body_entered(body):
 func _on_Orb_Zone_body_exited(body):
   if body.get_name() == 'Player':
     #stop timer
+    $AnimatedSprite.play("run")
     shoot_tmr.stop()
     
 func fire_orb():
