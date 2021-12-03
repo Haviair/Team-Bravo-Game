@@ -104,7 +104,7 @@ extents = Vector2( 35.1532, 39.2048 )
 radius = 276.0
 
 [sub_resource type="CircleShape2D" id=28]
-radius = 146.342
+radius = 130.004
 
 [node name="Witch" type="KinematicBody2D"]
 collision_layer = 4
@@ -130,3 +130,11 @@ shape = SubResource( 29 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Orb Zone"]
 shape = SubResource( 28 )
+
+[node name="orb_shooting_timer" type="Timer" parent="."]
+
+[connection signal="body_entered" from="Follow Detection" to="." method="_on_Follow_Detection_body_entered"]
+[connection signal="body_exited" from="Follow Detection" to="." method="_on_Follow_Detection_body_exited"]
+[connection signal="body_entered" from="Orb Zone" to="." method="_on_Orb_Zone_body_entered"]
+[connection signal="body_exited" from="Orb Zone" to="." method="_on_Orb_Zone_body_exited"]
+[connection signal="timeout" from="orb_shooting_timer" to="." method="fire_orb"]

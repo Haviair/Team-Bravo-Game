@@ -23,8 +23,8 @@ func hit():
     queue_free()
 
 func _on_Detection_Zone_body_entered(body):
-    if body.get_name() == 'Player':
-      player = body
+      if body.get_name() == 'Player':
+        player = body
 
 func _on_Detection_Zone_body_exited(body):
   #Check if player, might also be arrow
