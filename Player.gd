@@ -137,6 +137,7 @@ func fire():
       arrow_instance.apply_central_impulse(Vector2(arrow_speed,0)*direction)
   get_tree().get_root().call_deferred("add_child", arrow_instance)
   
+  
 func diagnol_right_fire():
   var arrow_instance = arrow.instance()
   arrow_instance.position = get_global_position()
@@ -186,6 +187,9 @@ func _enemy_body_entered(body: Node):
   elif 'Boss' in body.get_name():
     hp -= 25
     en_dmg_timer.start()
+  elif 'Orb' in body.get_name():
+    body.remove()
+    hp -= 25
     
 func _enemy_body_exited(body: Node):
   if 'Enemy' in body.get_name():
