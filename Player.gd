@@ -190,6 +190,7 @@ func _enemy_body_entered(body: Node):
   elif 'Orb' in body.get_name():
     body.remove()
     hp -= 25
+    get_tree().root.get_node("Graveyard_Level").get_node("CanvasLayer2").get_node("Player_UI").get_node("Healthbar").value = hp
     
 func _enemy_body_exited(body: Node):
   if 'Enemy' in body.get_name():

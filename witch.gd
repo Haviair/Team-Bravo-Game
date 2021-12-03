@@ -29,16 +29,19 @@ func _on_Follow_Detection_body_entered(body):
   if body.get_name() == 'Player':
     player = body
     follow_act = true
+    $AnimatedSprite.play("run")
       
 func _on_Follow_Detection_body_exited(body):
   #Check if player, might also be arrow
   if body.get_name() == 'Player':
     player = null
     follow_act = false
+    $AnimatedSprite.play("idle")
 
 func _on_Orb_Zone_body_entered(body):
   if body.get_name() == 'Player':
     #Stop following
+    $AnimatedSprite.play("idle")
     follow_act = false
     #Fire an orb and start timer
     fire_orb()
