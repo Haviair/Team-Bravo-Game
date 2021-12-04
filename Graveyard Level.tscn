@@ -408,10 +408,10 @@ scale = Vector2( -1.17472, 1.38121 )
 next_scene = ExtResource( 22 )
 
 [node name="Witch" parent="." instance=ExtResource( 23 )]
-position = Vector2( 659, 277 )
+position = Vector2( 1692, -756 )
 
 [node name="monster" parent="." instance=ExtResource( 24 )]
-position = Vector2( 277, 557 )
+position = Vector2( 3083, -408 )
 
 [connection signal="body_entered" from="Chest" to="Chest" method="_on_Chest_body_entered"]
 [connection signal="body_entered" from="end_portal" to="end_portal" method="_on_body_entered"]
