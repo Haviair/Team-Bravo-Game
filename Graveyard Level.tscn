@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Art/graveyard/Tileset.png" type="Texture" id=2]
@@ -23,6 +23,7 @@
 [ext_resource path="res://Power-Ups.tscn" type="PackedScene" id=21]
 [ext_resource path="res://Castle_Level.tscn" type="PackedScene" id=22]
 [ext_resource path="res://witch.tscn" type="PackedScene" id=23]
+[ext_resource path="res://one_eye_monster.tscn" type="PackedScene" id=24]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 80, 80, 0, 80, 0, 0, 80, 0 )
@@ -408,6 +409,9 @@ next_scene = ExtResource( 22 )
 
 [node name="Witch" parent="." instance=ExtResource( 23 )]
 position = Vector2( 659, 277 )
+
+[node name="monster" parent="." instance=ExtResource( 24 )]
+position = Vector2( 277, 557 )
 
 [connection signal="body_entered" from="Chest" to="Chest" method="_on_Chest_body_entered"]
 [connection signal="body_entered" from="end_portal" to="end_portal" method="_on_body_entered"]
