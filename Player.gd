@@ -186,8 +186,9 @@ func _enemy_body_entered(body: Node):
     damagetimer.start()
   elif 'Boss' in body.get_name():
     hp -= 25
+    get_tree().root.get_node("Graveyard_Level").get_node("CanvasLayer2").get_node("Player_UI").get_node("Healthbar").value = hp
     en_dmg_timer.start()
-  elif 'Orb' in body.get_name():
+  elif 'Orb' in body.get_name() or 'projectile' in body.get_name():
     body.remove()
     hp -= 25
     get_tree().root.get_node("Graveyard_Level").get_node("CanvasLayer2").get_node("Player_UI").get_node("Healthbar").value = hp

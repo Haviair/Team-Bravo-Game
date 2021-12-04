@@ -6,3 +6,7 @@ func _ready():
 
 func remove():
   queue_free()
+
+
+func apply_anim():
+   $AnimatedSprite.play("default")

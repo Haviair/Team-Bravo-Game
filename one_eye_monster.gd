@@ -3,7 +3,7 @@ extends KinematicBody2D
 onready var shoot_tmr = $shooting_timer
 var hp = 100
 var run_speed = 200
-var orb = preload("res://orb.tscn")
+var orb = preload("res://projectile.tscn")
 var player: Node
 var follow_act = false
 var patrol_act = true
@@ -63,4 +63,5 @@ func fire_orb():
   orb_instance.gravity_scale = 0.0
   player_pos = self.position.direction_to(player.position)*100
   orb_instance.apply_central_impulse(player_pos)
+  orb_instance.apply_anim()
   get_tree().get_root().call_deferred("add_child", orb_instance)
