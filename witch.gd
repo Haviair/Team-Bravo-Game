@@ -25,6 +25,9 @@ func hit():
     $AnimatedSprite.play("death")
     yield($AnimatedSprite, "animation_finished")
     queue_free()
+  yield($AnimatedSprite, "animation_finished")
+  $AnimatedSprite.play("idle")
+  
     
 func _on_Follow_Detection_body_entered(body):
   if body.get_name() == 'Player':
