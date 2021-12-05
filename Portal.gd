@@ -3,23 +3,34 @@ extends Area2D
 
 export var whichLevel : = 0
 
-onready var anim_player: AnimationPlayer = $AnimationPlayer
-
 export var next_scene: PackedScene
 
 func _on_Portal_body_entered( body : PhysicsBody2D ) -> void :
-  print( "Player entered the Portal for level %d." % [ whichLevel ] )
+#  if ( whichLevel == 2|| whichLevel == 5 || whichLevel == 7):
+#    print("Player entered room 3")
+#
+#    body.position = Vector2(2080, -320)
+#    print(body.position) 
+#  elif (whichLevel == 1):
+#    print("player entered room 1")
+#  elif (whichLevel == 0 || whichLevel == 3):
+#    print(" Player entered room 2")
+#  elif (whichLevel == 6):
+#    print("player entered room 4")
+#  elif ( whichLevel == 4):
+#    print("player entered boss room")
+#  print("player position before portal ", body.get_global_position())  
 
   body.gotoLevel( whichLevel + 1 )
-  
-  
+#
+  print("player position after portal ", body.get_global_position())
+
 func _on_body_entered(body: PhysicsBody2D):
   teleport()
   
 func teleport() -> void:
-  if get_tree().root.get_node("Graveyard_Level").get_node("Player").in_graveyard == true:
-    get_tree().root.get_node("Graveyard_Level").get_node("Player").in_graveyard = false
-    get_tree().root.get_node("Graveyard_Level").get_node("Player").in_castle = true
   get_tree().change_scene_to(next_scene)
+  print("I changed scenes")
+    
   
 

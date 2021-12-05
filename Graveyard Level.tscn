@@ -389,8 +389,11 @@ __meta__ = {
 layer = 10
 
 [node name="Player_UI" parent="CanvasLayer2" instance=ExtResource( 5 )]
-margin_left = 6.32227
-margin_right = 6.32227
+margin_left = 0.709965
+margin_top = -1.1225
+margin_right = 0.709961
+margin_bottom = -1.1225
+rect_rotation = -0.185486
 
 [node name="Old_Man" parent="." instance=ExtResource( 18 )]
 position = Vector2( -437.628, -240.22 )

@@ -33,10 +33,28 @@ const graveyard_level = [
   ]
 
 const castle_level = [
-  { 'StartPosition' : Vector2(  160, 320 ), 'CameraLimits' : [  0, 1280, 0, 800 ] },
-  { 'StartPosition' : Vector2( 1600, 400 ), 'CameraLimits' : [ 1560, 2720, 0, 800 ] },
-  { 'StartPosition' : Vector2( 2080, 40 ), 'CameraLimits' : [ -960, -240, 1436, 2724 ] }
+  
+  { 'StartPosition' : Vector2(  160, 320 ), 'CameraLimits' : [  0, 1280, 0, 800 ] },# room1
+  { 'StartPosition' : Vector2( 1600, 400 ), 'CameraLimits' : [ 1440, 2720, 0, 800 ] },# room2
+  { 'StartPosition' : Vector2( 1120, 400 ), 'CameraLimits' : [ 0, 1280, 0, 800 ]}, #room1
+  { 'StartPosition' : Vector2( 2080, -320 ), 'CameraLimits' : [ 1440, 2720, -960, -160 ]},#room3
+  { 'StartPosition' : Vector2( 2080, 160 ), 'CameraLimits' : [ 1440, 2720, 0, 800 ]},#room 2
+  { 'StartPosition' : Vector2( 3040, -560 ), 'CameraLimits' : [ 2880, 4800, -1520, 1360 ]},# boss room
+  { 'StartPosition' : Vector2( 2560, -560 ), 'CameraLimits' : [ 1440, 2720, -960, -160 ]},#room 3 
+  { 'StartPosition' : Vector2( 2080, -1280 ), 'CameraLimits' : [ 1440, 2720, -1920, -1120 ]},#room 4
+  { 'StartPosition' : Vector2( 2080, -800 ), 'CameraLimits' : [ 1440, 2720, -960, -160 ]} #room 3
   ]
+  
+const openfield_level = [
+  { 'StartPosition' : Vector2(  840, 600), 'CameraLimits' : [  0, 1280, 0, 800 ] },# room1
+  { 'StartPosition' : Vector2( 640, -320 ), 'CameraLimits' : [ 0, 1280, -960, -160 ] },# room2
+  { 'StartPosition' : Vector2( 640, 160 ), 'CameraLimits' : [ 0, 1280, 0, 800 ]}, #room1
+  { 'StartPosition' : Vector2( 1600, -560 ), 'CameraLimits' : [ 1440, 2648, -960, -160 ]},#room3
+  { 'StartPosition' : Vector2( 1120, -560 ), 'CameraLimits' : [ 0, 1280, -960, -160 ]},#room 2
+  { 'StartPosition' : Vector2( -320, -560 ), 'CameraLimits' : [ -2640, -160, -960, 1200 ]},# boss room
+  { 'StartPosition' : Vector2( 160, -560 ), 'CameraLimits' : [ 0, 1280, -960, -160 ]}#room 2
+  
+ ]
 
 var currentLevel : = 0
 
@@ -233,6 +251,20 @@ func gotoLevel( which : int = -1 ) -> void :
     $Camera2D.limit_right = castle_level[which][ 'CameraLimits' ][1]
     $Camera2D.limit_top = castle_level[which][ 'CameraLimits' ][2]
     $Camera2D.limit_bottom = castle_level[which][ 'CameraLimits' ][3]
+    
+  elif in_field == true:
+    if which < 0 :
+      which = currentLevel
+
+    if which >= openfield_level.size() :
+      print( "Finished last level, so going back to the beginning." )
+      which = 0
+
+    position = openfield_level[which][ 'StartPosition' ]
+    $Camera2D.limit_left  = openfield_level[which][ 'CameraLimits' ][0]
+    $Camera2D.limit_right = openfield_level[which][ 'CameraLimits' ][1]
+    $Camera2D.limit_top = openfield_level[which][ 'CameraLimits' ][2]
+    $Camera2D.limit_bottom = openfield_level[which][ 'CameraLimits' ][3]
   
 func increase_dmg():
   arrow_dmg += 10
