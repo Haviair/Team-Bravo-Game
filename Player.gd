@@ -137,6 +137,7 @@ func fire():
       arrow_instance.apply_central_impulse(Vector2(arrow_speed,0)*direction)
   get_tree().get_root().call_deferred("add_child", arrow_instance)
   
+  
 func diagnol_right_fire():
   var arrow_instance = arrow.instance()
   arrow_instance.position = get_global_position()
@@ -185,7 +186,12 @@ func _enemy_body_entered(body: Node):
     damagetimer.start()
   elif 'Boss' in body.get_name():
     hp -= 25
+    get_tree().root.get_node("Graveyard_Level").get_node("CanvasLayer2").get_node("Player_UI").get_node("Healthbar").value = hp
     en_dmg_timer.start()
+  elif 'Orb' in body.get_name() or 'projectile' in body.get_name():
+    body.remove()
+    hp -= 25
+    get_tree().root.get_node("Graveyard_Level").get_node("CanvasLayer2").get_node("Player_UI").get_node("Healthbar").value = hp
     
 func _enemy_body_exited(body: Node):
   if 'Enemy' in body.get_name():
