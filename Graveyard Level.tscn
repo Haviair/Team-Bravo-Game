@@ -282,8 +282,8 @@ points = PoolVector2Array( 240, 320, 0, 320, 0, 0, 240, 0 )
 [node name="Graveyard_Level" type="Node"]
 script = ExtResource( 4 )
 __meta__ = {
-"_edit_horizontal_guides_": [ -721.765, 1436.82, 795.927, 640.401 ],
-"_edit_vertical_guides_": [ 639.347 ]
+"_edit_horizontal_guides_": [ -721.765, 1436.82, 795.927, 800.109 ],
+"_edit_vertical_guides_": [ -29.345 ]
 }
 
 [node name="Map Layout" type="TileMap" parent="."]
@@ -402,6 +402,6 @@ position = Vector2( -354.384, -218.814 )
 position = Vector2( 1725.45, -458.949 )
 
 [node name="Enemy_Wolf" parent="." instance=ExtResource( 20 )]
-position = Vector2( 2600.62, -760.671 )
+position = Vector2( 759.622, 432.28 )
 
 [connection signal="body_entered" from="Chest" to="Chest" method="_on_Chest_body_entered"]
