@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/_0002_Layer-3.png-7b02fb54886f21c65ed2d19f78ac5069.stex"
+path="res://.import/Background.png-67b7271583f8520b2b7f2fb593185f3e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Boss/_0002_Layer-3.png"
-dest_files=[ "res://.import/_0002_Layer-3.png-7b02fb54886f21c65ed2d19f78ac5069.stex" ]
+source_file="res://Art/Background.png"
+dest_files=[ "res://.import/Background.png-67b7271583f8520b2b7f2fb593185f3e.stex" ]
 
 [params]
 
@@ -28,6 +28,7 @@ process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
 process/invert_color=false
+process/normal_map_invert_y=false
 stream=false
 size_limit=0
 detect_3d=true

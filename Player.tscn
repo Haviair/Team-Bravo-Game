@@ -32,12 +32,22 @@ animations = [ {
 "name": "Stand_Down",
 "speed": 5.0
 }, {
+"frames": [ ExtResource( 16 ), ExtResource( 12 ), ExtResource( 11 ), ExtResource( 20 ) ],
+"loop": true,
+"name": "Run_Side",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 15 ), ExtResource( 13 ), ExtResource( 21 ), ExtResource( 14 ) ],
 "loop": true,
 "name": "Run_Up",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 22 ) ],
+"loop": true,
+"name": "Stand_Side",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 17 ) ],
 "loop": true,
 "name": "Stand_Side",
 "speed": 5.0

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/_0002_Layer-3.png-7b02fb54886f21c65ed2d19f78ac5069.stex"
+path="res://.import/torch.png-08944d94dafbc2e2b98bf2207d16fd36.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Boss/_0002_Layer-3.png"
-dest_files=[ "res://.import/_0002_Layer-3.png-7b02fb54886f21c65ed2d19f78ac5069.stex" ]
+source_file="res://Art/torch.png"
+dest_files=[ "res://.import/torch.png-08944d94dafbc2e2b98bf2207d16fd36.stex" ]
 
 [params]
 

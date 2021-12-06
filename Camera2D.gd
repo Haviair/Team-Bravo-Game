@@ -8,3 +8,5 @@ extends Camera2D
 #  elif limit_right < player.position.x:
 #    limit_right = player.position.x
 #  pass
+func _process(_delta) :
+  pass

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/_0002_Layer-3.png-7b02fb54886f21c65ed2d19f78ac5069.stex"
+path="res://.import/wolfsheet5.png-c3b8b139855cf0468384878b2dd790d9.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/Boss/_0002_Layer-3.png"
-dest_files=[ "res://.import/_0002_Layer-3.png-7b02fb54886f21c65ed2d19f78ac5069.stex" ]
+source_file="res://Art/wolfsheet5.png"
+dest_files=[ "res://.import/wolfsheet5.png-c3b8b139855cf0468384878b2dd790d9.stex" ]
 
 [params]
 
