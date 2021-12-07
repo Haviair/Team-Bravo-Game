@@ -1,0 +1,41 @@
+CSE 5392 Game Design Prof. Brian Dalio
+
+Ojus M S 1001444073
+
+Storyline/Plot
+
+>>> 10/11/2021 <<<< 
+02:10 AM
+
+
+th game is set in a timeline where modernities and modern technologies have not been discovered/invented yet. It is something like a fatasy world set in an rpg.
+There are several occupations and being a warrior is one among them. 
+There are several classes of warriors like sw0rdsman, brute, mage, healer, assassin, archer, etc
+There are different races too like elf, beastman, human, vampire, werewolf  etc. (are warewolf and vampue considered races or are they jsut humans who are curse[or blesses?] to have this ability by some way or the other?)
+The hero is a human warrior, an archer, the lowest ranking class among the warrior heirarchy and considered the weakest (basically worthless) and looked down upon. 
+The hero sets out to prove that the archer class is strong and reliable too and has its own merits and wants those around him to stop looking down on the class and remove thier prejudice.
+
+Hero is a warrior who takes missions posted to the general public warrior populace by the ruling govt(/kingdom?)
+
+level one storyline->
+hero notices a mission posted stating that there have been some vandalisms/graverobberies happening at a graveyard and they are looking for someone to take up the task of investigating the matter.
+naturally, warriors of other classes ignore this as they want to take up (bigger and better) missions (befitting their class and prestige) (and also with better reward)
+hero decides he has to start somewhere and takes this mission and also wants to let the departed rest in peace. 
+
+the settign takes place in a graveyard. hero is starting out the game and has a normal bow and arrow (basic stats-> something like a mere 10 or 20 attack and somethign like 0.5 attacks per second). (also equppied with basic armor? if equipment is a thing)
+
+(this makes me ask, will carrying capacity be a thing? will hero run out of arrows and need to pick up/craft more? or will there be unlimited arrows? or will this depend on game difficulty chosen at game start? will there be multiple difficulty options?)
+
+the hero heads to the graveyard and stays out of sight and observes for a couple of hours. after a while, he notices chars who look like rogue bandits digging up graves randomly. the hero waits and overhears them saying they would make a quick buck by robbing graves for buried valuables that they would sell.
+hero makes his presence known and confronts bandits. they attack. 
+(perfect opportunity for a tutorial if any. basic enemies, weak, rely on melee attacks using weapons like knife/dagger. easy enough to clear them up )
+
+will the graveyard level have multiple rooms/screens? or just one screen
+if just 1 screen, hero has to fight multiple bandits to clear it on the same screen. 
+if multiple, hero can clear couple bandits per screen ( say 3 screens total? would be easier to implement the concept (basically more plausible) if hraveyard is in a structure like a cave or underground)
+
+IF graveyard has multiple rooms/screens in a structure, we can make the hero encounter a mysterious person at the end of clearing the enemies, this char is like a person that very little is known about and is rumored to be very powerful and also to have lived for 100s of years (still looks young tho like in 20s haha), this char will interact with the hero and praise him for his character (and say ssome generic crap like he can read his heart and character bla bla) and grant him an ability (or offer him to choose 1 among 3 that he offers?) (if we are going ti give the hero an ability right at the very first level, i was thinking maybe in the next level which should be bigger as in having more screens. cause the GY lvl is somwhat of a tutorial and introduction for the player to the game right?). if single abiliy granted without choice, it can be something like the ability to enchant the arrows to do something [like stun, poison, burn, freeze, shock, etc enemies that they hit] [or some permanent stat buff like more attack power  or attack speed?]
+
+if ability granted in a later stage also fine like level 2.
+ 
+ 03:17 am

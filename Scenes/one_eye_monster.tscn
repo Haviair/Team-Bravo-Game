@@ -1,0 +1,85 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Scripts/one_eye_monster.gd" type="Script" id=2]
+[ext_resource path="res://Art/Flying Eye/Attack3.png" type="Texture" id=3]
+
+
+[sub_resource type="AtlasTexture" id=30]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 0, 0, 150, 150 )
+
+[sub_resource type="AtlasTexture" id=31]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 150, 0, 150, 150 )
+
+[sub_resource type="AtlasTexture" id=32]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 300, 0, 150, 150 )
+
+[sub_resource type="AtlasTexture" id=33]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 450, 0, 150, 150 )
+
+[sub_resource type="AtlasTexture" id=34]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 600, 0, 150, 150 )
+
+[sub_resource type="AtlasTexture" id=35]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 750, 0, 150, 150 )
+
+[sub_resource type="SpriteFrames" id=9]
+animations = [ {
+"frames": [ SubResource( 30 ), SubResource( 31 ), SubResource( 32 ), SubResource( 33 ), SubResource( 34 ), SubResource( 35 ) ],
+"loop": true,
+"name": "idle",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=10]
+extents = Vector2( 35.1532, 39.2048 )
+
+[sub_resource type="CircleShape2D" id=29]
+radius = 276.0
+
+[sub_resource type="CircleShape2D" id=28]
+radius = 130.004
+
+[node name="monster" type="KinematicBody2D"]
+collision_layer = 4
+script = ExtResource( 2 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( -9, -7 )
+scale = Vector2( 2.5, 2.5 )
+frames = SubResource( 9 )
+animation = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 4.7622, -1.5874 )
+shape = SubResource( 10 )
+
+[node name="Follow Detection" type="Area2D" parent="."]
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Follow Detection"]
+position = Vector2( 4, -1 )
+shape = SubResource( 29 )
+
+[node name="shooting zone" type="Area2D" parent="."]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="shooting zone"]
+shape = SubResource( 28 )
+
+[node name="shooting_timer" type="Timer" parent="."]
+
+[connection signal="body_entered" from="Follow Detection" to="." method="_on_Follow_Detection_body_entered"]
+[connection signal="body_exited" from="Follow Detection" to="." method="_on_Follow_Detection_body_exited"]
+[connection signal="body_entered" from="shooting zone" to="." method="_on_Orb_Zone_body_entered"]
+[connection signal="body_exited" from="shooting zone" to="." method="_on_Orb_Zone_body_exited"]
+[connection signal="timeout" from="shooting_timer" to="." method="fire_orb"]
