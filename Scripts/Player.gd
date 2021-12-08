@@ -201,16 +201,16 @@ func _enemy_body_entered(body: Node):
     hp -= 10
     $AudioStreamPlayer.stream = preload("res://Music/player_grunt.wav")
     $AudioStreamPlayer.play()
-    get_tree().root.get_node("Graveyard_Level").get_node("CanvasLayer2").get_node("Player_UI").get_node("Healthbar").value = hp
+    get_tree().root.get_child(0).get_node("CanvasLayer2").get_node("Player_UI").get_node("Healthbar").value = hp
     damagetimer.start()
   elif 'Boss' in body.get_name():
     hp -= 10
-    get_tree().root.get_node("Graveyard_Level").get_node("CanvasLayer2").get_node("Player_UI").get_node("Healthbar").value = hp
+    get_tree().root.get_child(0).get_node("CanvasLayer2").get_node("Player_UI").get_node("Healthbar").value = hp
     en_dmg_timer.start()
   elif 'Orb' in body.get_name() or 'projectile' in body.get_name():
     body.remove()
     hp -= 25
-    get_tree().root.get_node("Graveyard_Level").get_node("CanvasLayer2").get_node("Player_UI").get_node("Healthbar").value = hp
+    get_tree().root.get_child(0).get_node("CanvasLayer2").get_node("Player_UI").get_node("Healthbar").value = hp
     
 func _enemy_body_exited(body: Node):
   if 'Enemy' in body.get_name():
