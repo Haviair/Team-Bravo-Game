@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Art/grassland/tree1.png" type="Texture" id=1]
 [ext_resource path="res://Art/grassland/water.png" type="Texture" id=2]
@@ -10,6 +10,7 @@
 [ext_resource path="res://Scripts/Openfield_Level.gd" type="Script" id=8]
 [ext_resource path="res://Scenes/CreditsAndThankYou.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scenes/Player UI.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Music/open_field.wav" type="AudioStream" id=11]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 80, 0, 80, 80, 0, 80 )
@@ -185,6 +186,7 @@ whichLevel = 5
 [node name="monster" parent="." instance=ExtResource( 9 )]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 11 )
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="."]
 layer = 10
