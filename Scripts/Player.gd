@@ -51,7 +51,7 @@ const openfield_level = [
   { 'StartPosition' : Vector2( 640, 160 ), 'CameraLimits' : [ 0, 1280, 0, 800 ]}, #room1
   { 'StartPosition' : Vector2( 1600, -560 ), 'CameraLimits' : [ 1440, 2648, -960, -160 ]},#room3
   { 'StartPosition' : Vector2( 1120, -560 ), 'CameraLimits' : [ 0, 1280, -960, -160 ]},#room 2
-  { 'StartPosition' : Vector2( -320, -560 ), 'CameraLimits' : [ -2640, -160, -960, 1200 ]},# boss room
+  { 'StartPosition' : Vector2( -320, -560 ), 'CameraLimits' : [ -2640, -160, -1920, 1200 ]},# boss room
   { 'StartPosition' : Vector2( 160, -560 ), 'CameraLimits' : [ 0, 1280, -960, -160 ]}#room 2
   
  ]

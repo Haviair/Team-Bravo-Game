@@ -19,8 +19,8 @@
 [ext_resource path="res://Scenes/Boss.tscn" type="PackedScene" id=17]
 [ext_resource path="res://Scenes/Old_Man.tscn" type="PackedScene" id=18]
 [ext_resource path="res://Scenes/Chest.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Scenes/Castle_Textscreen.tscn" type="PackedScene" id=20]
 [ext_resource path="res://Scenes/Power-Ups.tscn" type="PackedScene" id=21]
-[ext_resource path="res://Scenes/Castle_Level.tscn" type="PackedScene" id=22]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 80, 80, 0, 80, 0, 0, 80, 0 )
@@ -403,7 +403,7 @@ position = Vector2( -354.384, -218.814 )
 [node name="end_portal" parent="." instance=ExtResource( 16 )]
 position = Vector2( -1960.01, 417.429 )
 scale = Vector2( -1.17472, 1.38121 )
-next_scene = ExtResource( 22 )
+next_scene = ExtResource( 20 )
 
 [connection signal="body_entered" from="Chest" to="Chest" method="_on_Chest_body_entered"]
 [connection signal="body_entered" from="end_portal" to="end_portal" method="_on_body_entered"]
