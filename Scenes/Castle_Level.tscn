@@ -358,5 +358,6 @@ position = Vector2( 4338.98, -1088.12 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 21 )
+volume_db = -20.0
 
 [connection signal="body_entered" from="end_portal" to="end_portal" method="_on_body_entered"]
