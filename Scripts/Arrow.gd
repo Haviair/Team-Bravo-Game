@@ -6,14 +6,13 @@ func _ready() -> void:
 
 
 func _on_Area2D_body_entered(body: Node) -> void:
+  #When arrow hits an enemy, modifies enemy hp
   if "Enemy" in body.get_name():
     body.health -=   get_tree().root.get_node("Graveyard_Level").get_node("Player").arrow_dmg
     body.hit()
   elif "Boss" in body.get_name():
     body.health -=   get_tree().root.get_node("Graveyard_Level").get_node("Player").arrow_dmg
-    print(body.health)
     body.hit()
-  elif "Witch" in body.get_name():
+  elif "Witch" in body.get_name() or "monster" in body.get_name():
     body.hit()
-  #print(body.get_name())
   queue_free()
