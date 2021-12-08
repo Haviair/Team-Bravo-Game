@@ -3,7 +3,7 @@ extends KinematicBody2D
 onready var shoot_tmr = $shooting_timer
 var hp = 100
 var run_speed = 200
-var orb = preload("res://projectile.tscn")
+var orb = preload("res://Scenes//projectile.tscn")
 var player: Node
 var follow_act = false
 var patrol_act = true

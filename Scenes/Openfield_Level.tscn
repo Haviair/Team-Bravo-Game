@@ -1,3 +1,4 @@
+
 [gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Art/grassland/tree1.png" type="Texture" id=1]
@@ -8,6 +9,8 @@
 [ext_resource path="res://Scenes/Portal.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scripts/Openfield_Level.gd" type="Script" id=8]
+[ext_resource path="res://Scenes/one_eye_monster.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/Player UI.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Scenes/CreditsAndThankYou.tscn" type="PackedScene" id=9]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
@@ -180,5 +183,20 @@ whichLevel = 4
 [node name="Portal5" parent="." instance=ExtResource( 6 )]
 position = Vector2( -200, -560 )
 whichLevel = 5
+
+[node name="monster" parent="." instance=ExtResource( 9 )]
+position = Vector2( -1062, -888 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+layer = 10
+
+[node name="Player_UI" parent="CanvasLayer2" instance=ExtResource( 10 )]
+margin_left = 0.709965
+margin_top = -1.1225
+margin_right = 0.709961
+margin_bottom = -1.1225
+rect_rotation = -0.185486
 
 [connection signal="body_entered" from="End_Portal" to="End_Portal" method="_on_body_entered"]

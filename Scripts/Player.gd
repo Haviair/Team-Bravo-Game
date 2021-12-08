@@ -19,6 +19,7 @@ var arrow_dmg = 10
 var in_graveyard = true
 var in_castle = false
 var in_field = false
+var cur_lvl = "Graveyard_Level"
 
 const graveyard_level = [
   { 'StartPosition' : Vector2(  200, 240 ), 'CameraLimits' : [  0, 1280, 0, 800 ] },
@@ -34,7 +35,7 @@ const graveyard_level = [
 
 const castle_level = [
   
-  { 'StartPosition' : Vector2(  160, 320 ), 'CameraLimits' : [  0, 1280, 0, 800 ] },# room1
+    { 'StartPosition' : Vector2(  160, 320 ), 'CameraLimits' : [  0, 1280, 0, 800 ] },# room1
   { 'StartPosition' : Vector2( 1600, 400 ), 'CameraLimits' : [ 1440, 2720, 0, 800 ] },# room2
   { 'StartPosition' : Vector2( 1120, 400 ), 'CameraLimits' : [ 0, 1280, 0, 800 ]}, #room1
   { 'StartPosition' : Vector2( 2080, -320 ), 'CameraLimits' : [ 1440, 2720, -960, -160 ]},#room3
@@ -201,16 +202,18 @@ func _enemy_body_entered(body: Node):
     hp -= 10
     $AudioStreamPlayer.stream = preload("res://Music/player_grunt.wav")
     $AudioStreamPlayer.play()
-    get_tree().root.get_node("Graveyard_Level").get_node("CanvasLayer2").get_node("Player_UI").get_node("Healthbar").value = hp
+    get_tree().root.get_node(cur_lvl+"/CanvasLayer2/Player_UI/Healthbar").value = hp
     damagetimer.start()
   elif 'Boss' in body.get_name():
     hp -= 10
-    get_tree().root.get_node("Graveyard_Level").get_node("CanvasLayer2").get_node("Player_UI").get_node("Healthbar").value = hp
+    
+    get_tree().root.get_node(cur_lvl+"/CanvasLayer2/Player_UI/Healthbar").value = hp
     en_dmg_timer.start()
   elif 'Orb' in body.get_name() or 'projectile' in body.get_name():
     body.remove()
     hp -= 25
-    get_tree().root.get_node("Graveyard_Level").get_node("CanvasLayer2").get_node("Player_UI").get_node("Healthbar").value = hp
+    print(cur_lvl)
+    get_tree().root.get_node(cur_lvl+"/CanvasLayer2/Player_UI/Healthbar").value = hp
     
 func _enemy_body_exited(body: Node):
   if 'Enemy' in body.get_name():
@@ -222,7 +225,7 @@ func _on_damage_timer_timeout():
   hp -= 10
   $AudioStreamPlayer.stream = preload("res://Music/player_grunt.wav")
   $AudioStreamPlayer.play()
-  get_tree().root.get_node("Graveyard_Level").get_node("CanvasLayer2").get_node("Player_UI").get_node("Healthbar").value = hp
+  get_tree().root.get_node(cur_lvl+"/CanvasLayer2/Player_UI/Healthbar").value = hp
 
 func gotoLevel( which : int = -1 ) -> void :
   if in_graveyard == true:

@@ -55,7 +55,7 @@ animations = [ {
 } ]
 
 [sub_resource type="RectangleShape2D" id=11]
-extents = Vector2( 31.1576, 9.37253 )
+extents = Vector2( 11, 8.4795 )
 
 [node name="projectile" type="RigidBody2D"]
 position = Vector2( 3.35979, 4.30473 )
@@ -68,6 +68,7 @@ position = Vector2( 61.8388, 18.0363 )
 shape = SubResource( 1 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( 63.6402, 18.6953 )
 frames = SubResource( 10 )
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -75,7 +76,7 @@ collision_layer = 0
 collision_mask = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2( 62.4711, 19.1088 )
+position = Vector2( 64.6402, 18.2158 )
 shape = SubResource( 11 )
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
