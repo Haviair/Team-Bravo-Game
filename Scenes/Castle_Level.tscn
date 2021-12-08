@@ -356,4 +356,6 @@ whichLevel = 2
 [node name="Witch" parent="." instance=ExtResource( 20 )]
 position = Vector2( 4338.98, -1088.12 )
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
 [connection signal="body_entered" from="end_portal" to="end_portal" method="_on_body_entered"]
