@@ -3,9 +3,8 @@
 [ext_resource path="res://Art/Portal-80x120.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Portal.gd" type="Script" id=2]
 
-
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 44.4951, 70.7384 )
+extents = Vector2( 41.4007, 70.394 )
 
 [node name="Portal" type="Area2D"]
 collision_layer = 0
