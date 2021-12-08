@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/open_field.wav-8729e24615713a1bfb0436da6d07c302.sample"
+
+[deps]
+
+source_file="res://Music/open_field.wav"
+dest_files=[ "res://.import/open_field.wav-8729e24615713a1bfb0436da6d07c302.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=true
+compress/mode=0
