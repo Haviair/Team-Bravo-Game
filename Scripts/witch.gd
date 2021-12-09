@@ -26,7 +26,7 @@ func _physics_process(_delta):
 
 func hit():
   #Called from arrow.gd when collision occurs with enemy
-  hp -= 25
+  
   $AnimatedSprite.play("damage")
   if hp == 0:
     $AnimatedSprite.play("death")
