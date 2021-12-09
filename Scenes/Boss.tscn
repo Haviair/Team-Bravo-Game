@@ -6,6 +6,7 @@
 [ext_resource path="res://Art/Boss/_0002_Layer-3.png" type="Texture" id=4]
 [ext_resource path="res://Art/Boss/_0001_Layer-2.png" type="Texture" id=5]
 
+
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
 "frames": [ ExtResource( 1 ), ExtResource( 5 ), ExtResource( 4 ), ExtResource( 3 ) ],
@@ -21,6 +22,7 @@ extents = Vector2( 112.887, 85.649 )
 radius = 605.638
 
 [node name="Boss" type="KinematicBody2D"]
+scale = Vector2( 1.5, 1.5 )
 collision_layer = 4
 script = ExtResource( 2 )
 __meta__ = {

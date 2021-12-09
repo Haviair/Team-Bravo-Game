@@ -19,19 +19,10 @@ var text_queue = []
 func _ready():
   print("Starting state: State.READY")
   hide_textbox()
-  if get_parent().get_child(0).name == "Graveyard_Level":
-    if get_tree().get_root().get_node("Graveyard_Level").get_node("Old_Man").old_man_lv1 == true:
-      get_tree().get_root().get_node("Graveyard_Level").get_node("Old_Man").old_man_lv1 = false
-      queue_text("OLD MAN: Greetings HERO! I have been watching your actions since you got here. These evil spirits needed to be stopped. ")
-      queue_text("OLD MAN: I can tell, you are doing this because of your sense of duty and respect to let the departed rest in peace.")
-      queue_text("OLD MAN: I can tell a LOT about a person at a glance.")
-      queue_text("OLD MAN: Your heart and mind tell me you are of good character. There is a lot you will achieve. Take this as a parting gift. We will surely meet again.")
-  if get_parent().get_child(0).name == "Castle_Level":
-    if get_tree().get_root().get_node("Castle_Level").get_node("Old_Man").old_man_lv2 == true: 
-      get_tree().get_root().get_node("Castle_Level").get_node("Old_Man").old_man_lv2 = false
-      queue_text("OLD MAN: Looks like I missed the good part. Just kidding! You have yet again saved the day. Kudos. As a personal token of appreciation from me, here.")
-      queue_text("OLD MAN:I am sure those ladies are very greatful and releived. Maybe, one might even give you a token of appreciation like me!")
-  
+  queue_text("Excuse me wanderer where can I find the bathroom?")
+  queue_text("Why do we not look like the others?")
+  queue_text("Because we are free assets from opengameart!")
+  queue_text("Thanks for watching!")
 
 func _process(delta):
   match current_state:
@@ -75,11 +66,11 @@ func change_state(next_state):
   current_state = next_state
   match current_state:
     State.READY:
-      print("")
+      print("Changing state to: State.READY")
     State.READING:
-      print("")
+      print("Changing state to: State.READING")
     State.FINISHED:
-      print("")
+      print("Changing state to: State.FINISHED")
 
 func _on_Tween_tween_completed(object, key):
   end_symbol.text = "v"
