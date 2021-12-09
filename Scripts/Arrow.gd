@@ -15,5 +15,6 @@ func _on_Area2D_body_entered(body: Node) -> void:
     body.health -=   get_tree().root.get_node(cur_lvl).get_node("Player").arrow_dmg
     body.hit()
   elif "Witch" in body.get_name() or "monster" in body.get_name():
+    body.health -=   get_tree().root.get_node(cur_lvl).get_node("Player").arrow_dmg
     body.hit()
   queue_free()
