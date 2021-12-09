@@ -25,26 +25,26 @@ extents = Vector2( 32.348, 40.9011 )
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 34.2497, 43.3213 )
 
-[sub_resource type="SpriteFrames" id=4]
+[sub_resource type="SpriteFrames" id=3]
 animations = [ {
-"frames": [ ExtResource( 19 ), ExtResource( 18 ), ExtResource( 25 ), ExtResource( 24 ) ],
-"loop": true,
-"name": "Run_Down",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 15 ), ExtResource( 13 ), ExtResource( 21 ), ExtResource( 14 ) ],
 "loop": true,
 "name": "Run_Up",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 16 ), ExtResource( 12 ), ExtResource( 11 ), ExtResource( 20 ) ],
+"frames": [ ExtResource( 19 ), ExtResource( 18 ), ExtResource( 25 ), ExtResource( 24 ) ],
 "loop": true,
-"name": "Run_Side",
+"name": "Run_Down",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 23 ) ],
 "loop": true,
 "name": "Stand_Down",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 16 ), ExtResource( 12 ), ExtResource( 11 ), ExtResource( 20 ) ],
+"loop": true,
+"name": "Run_Side",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 17 ) ],
@@ -91,7 +91,7 @@ one_shot = true
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 position = Vector2( 0.0860434, -1.83209 )
 scale = Vector2( 1.25, 1.25 )
-frames = SubResource( 4 )
+frames = SubResource( 3 )
 animation = "Stand_Side"
 playing = true
 
