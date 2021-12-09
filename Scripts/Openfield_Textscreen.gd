@@ -19,8 +19,7 @@ var text_queue = []
 func _ready():
   print("Starting state: State.READY")
   hide_textbox()
-  queue_text("*Openfield Level Script*")
-  queue_text("*Again Openfield Level Script*")
+  
   queue_text("Our hero now finds himself in a meeting with an official of the kingdom.")
   queue_text("Official: I want to congratualte you on behalf of the kingdom. Your good deeds aren't going unnoticed.")
   queue_text("Hero: I'm honored. You didnt need to come all the way here to tell me that though, really. Something tells me you're here to do more than give me a pat on the back. What's up? ")
