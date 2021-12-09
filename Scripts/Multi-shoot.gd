@@ -17,5 +17,6 @@ func _ready() -> void:
 
 
 func _on_Multishoot_body_entered(body: Node) -> void:
-  get_tree().root.get_node(body.cur_lvl).get_node("Player").multishot = true
-  queue_free()
+  if body.name == "Player":
+    get_tree().root.get_node(body.cur_lvl).get_node("Player").multishot = true
+    queue_free()
