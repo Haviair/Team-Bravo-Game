@@ -5,14 +5,14 @@ var multi = preload("res://Scenes/Multi-shoot.tscn")
 var diagnol = preload("res://Scenes/Diagnol-shoot.tscn")
 var dmgup = preload("res://Scenes/Dmg_Up.tscn")
 var not_empty = true
-
+var cur_lvl = "Graveyard_Level"
 func _ready() -> void:
   pass # Replace with function body.
   
 
 func _on_Chest_body_entered(body) -> void:
   if(not_empty == true):
-    var item_selected = get_tree().root.get_node("Graveyard_Level").get_node("Power-Ups").powerup_selection()
+    var item_selected = get_tree().root.get_node(cur_lvl).get_node("Power-Ups").powerup_selection()
     if ( item_selected == "Health"):
       var health_instance = health.instance()
       health_instance.position = get_global_position()

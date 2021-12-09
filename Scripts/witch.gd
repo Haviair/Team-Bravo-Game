@@ -22,7 +22,7 @@ func _physics_process(_delta):
     #Implement patrol here
     #How to implement: Go back to home base
     #Makes more sense for main boss to go back to a home base since the player has to beat the boss
-    position = Vector2(  4338, -1098 )
+    position = Vector2(  3800, 700 )
 
 func hit():
   #Called from arrow.gd when collision occurs with enemy

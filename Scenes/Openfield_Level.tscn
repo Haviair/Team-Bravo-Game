@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Art/grassland/tree1.png" type="Texture" id=1]
 [ext_resource path="res://Art/grassland/water.png" type="Texture" id=2]
@@ -12,6 +12,10 @@
 [ext_resource path="res://Scenes/Player UI.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Music/open_field.wav" type="AudioStream" id=11]
 [ext_resource path="res://Scenes/one_eye_monster.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Scenes/Old_Man.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Scenes/Chest.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Scenes/Power-Ups.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Scenes/Enemy_Wolf.tscn" type="PackedScene" id=16]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 80, 0, 80, 80, 0, 80 )
@@ -198,6 +202,30 @@ margin_bottom = -1.1225
 rect_rotation = -0.185486
 
 [node name="monster" parent="." instance=ExtResource( 12 )]
-position = Vector2( -2229.18, -178.869 )
+position = Vector2( -1858.79, -143.675 )
+
+[node name="Old_Man" parent="." instance=ExtResource( 13 )]
+position = Vector2( -2120.23, -1605.23 )
+
+[node name="Chest" parent="." instance=ExtResource( 14 )]
+position = Vector2( -2032.52, -1605.37 )
+
+[node name="Power-Ups" parent="." instance=ExtResource( 15 )]
+
+[node name="Enemy_Wolf" parent="." instance=ExtResource( 16 )]
+position = Vector2( 292.792, 485.49 )
+
+[node name="Enemy_Wolf2" parent="." instance=ExtResource( 16 )]
+position = Vector2( 887.475, -687.077 )
+
+[node name="Enemy_Wolf3" parent="." instance=ExtResource( 16 )]
+position = Vector2( 2264.99, -571.164 )
+
+[node name="Enemy_Wolf4" parent="." instance=ExtResource( 16 )]
+position = Vector2( -1697.88, 571.164 )
+
+[node name="Enemy_Wolf5" parent="." instance=ExtResource( 16 )]
+position = Vector2( -1160.28, -1357.76 )
 
 [connection signal="body_entered" from="End_Portal" to="End_Portal" method="_on_body_entered"]
+[connection signal="body_entered" from="Chest" to="Chest" method="_on_Chest_body_entered"]

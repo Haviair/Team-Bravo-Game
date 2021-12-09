@@ -9,5 +9,5 @@ func _ready() -> void:
 func _on_Area2D_body_entered(body: Node) -> void:
   if "Player" in body.get_name():
     body.hp -= blast_dmg
-    get_tree().root.get_node("Graveyard_Level").get_node("CanvasLayer2").get_node("Player_UI").get_node("Healthbar").value = body.hp
+    get_tree().root.get_node(body.cur_lvl).get_node("CanvasLayer2").get_node("Player_UI").get_node("Healthbar").value = body.hp
   queue_free()

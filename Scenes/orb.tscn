@@ -7,7 +7,7 @@
 extents = Vector2( 28.4301, 6.41016 )
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 31.1576, 9.37253 )
+extents = Vector2( 8, 8 )
 
 [node name="Orb" type="RigidBody2D"]
 position = Vector2( 3.35979, 4.30473 )
@@ -29,7 +29,5 @@ collision_layer = 0
 collision_mask = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2( 62.4711, 19.1088 )
+position = Vector2( 43.6402, 22.6953 )
 shape = SubResource( 2 )
-
-[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
