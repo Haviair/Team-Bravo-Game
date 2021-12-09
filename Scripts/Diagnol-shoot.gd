@@ -17,5 +17,6 @@ func _ready() -> void:
 
 
 func _on_Diagnolshoot_body_entered(body: Node) -> void:
-  get_tree().root.get_node("Graveyard_Level").get_node("Player").diagonalshot = true
+  var cur_lvl = get_tree().get_current_scene().get_name()
+  get_tree().root.get_node(cur_lvl).get_node("Player").diagonalshot = true
   queue_free()

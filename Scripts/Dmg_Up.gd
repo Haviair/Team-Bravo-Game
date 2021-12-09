@@ -17,5 +17,7 @@ func _ready() -> void:
 
 
 func _on_Dmg_Up_body_entered(body: Node) -> void:
-  body.increase_dmg()
-  queue_free()
+  if "Player" in body.get_name():
+    body.increase_dmg()
+    queue_free()
+  
