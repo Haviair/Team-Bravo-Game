@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=2]
+[gd_scene load_steps=43 format=2]
 
 [ext_resource path="res://Art/Witch/B_witch_idle.png" type="Texture" id=1]
 [ext_resource path="res://Art/Witch/B_witch_death.png" type="Texture" id=2]
@@ -77,6 +77,21 @@ flags = 4
 atlas = ExtResource( 4 )
 region = Rect2( 0, 336, 32, 48 )
 
+[sub_resource type="AtlasTexture" id=25]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 0, 0, 32, 48 )
+
+[sub_resource type="AtlasTexture" id=26]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 0, 48, 32, 48 )
+
+[sub_resource type="AtlasTexture" id=27]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 0, 96, 32, 48 )
+
 [sub_resource type="AtlasTexture" id=15]
 flags = 4
 atlas = ExtResource( 2 )
@@ -127,21 +142,6 @@ flags = 4
 atlas = ExtResource( 2 )
 region = Rect2( 0, 432, 32, 48 )
 
-[sub_resource type="AtlasTexture" id=25]
-flags = 4
-atlas = ExtResource( 3 )
-region = Rect2( 0, 0, 32, 48 )
-
-[sub_resource type="AtlasTexture" id=26]
-flags = 4
-atlas = ExtResource( 3 )
-region = Rect2( 0, 48, 32, 48 )
-
-[sub_resource type="AtlasTexture" id=27]
-flags = 4
-atlas = ExtResource( 3 )
-region = Rect2( 0, 96, 32, 48 )
-
 [sub_resource type="AtlasTexture" id=28]
 flags = 4
 atlas = ExtResource( 5 )
@@ -179,14 +179,14 @@ animations = [ {
 "name": "run",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ) ],
-"loop": false,
-"name": "death",
-"speed": 5.0
-}, {
 "frames": [ SubResource( 25 ), SubResource( 26 ), SubResource( 27 ) ],
 "loop": false,
 "name": "damage",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ) ],
+"loop": false,
+"name": "death",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 28 ), SubResource( 29 ), SubResource( 30 ), SubResource( 31 ), SubResource( 32 ) ],
@@ -203,9 +203,6 @@ radius = 276.0
 
 [sub_resource type="CircleShape2D" id=36]
 radius = 130.004
-
-[sub_resource type="CircleShape2D" id=37]
-radius = 544.481
 
 [node name="Witch" type="KinematicBody2D"]
 collision_layer = 4
@@ -234,14 +231,8 @@ shape = SubResource( 36 )
 
 [node name="orb_shooting_timer" type="Timer" parent="."]
 
-[node name="Area2D" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource( 37 )
-
 [connection signal="body_entered" from="Follow Detection" to="." method="_on_Follow_Detection_body_entered"]
 [connection signal="body_exited" from="Follow Detection" to="." method="_on_Follow_Detection_body_exited"]
 [connection signal="body_entered" from="Orb Zone" to="." method="_on_Orb_Zone_body_entered"]
 [connection signal="body_exited" from="Orb Zone" to="." method="_on_Orb_Zone_body_exited"]
 [connection signal="timeout" from="orb_shooting_timer" to="." method="fire_orb"]
-[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]

@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Misc Assests/Adventurer.ttf" type="DynamicFontData" id=1]
-[ext_resource path="res://Scripts/CreditsAndThankYou.gd" type="Script" id=2]
+[ext_resource path="res://Scenes/CreditsAndThankYou.gd" type="Script" id=2]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0, 0, 0, 1 )
@@ -49,8 +49,8 @@ margin_top = 50.0
 margin_right = 1180.0
 margin_bottom = 750.0
 size_flags_vertical = 1
-custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0.992157, 1, 0, 1 )
+custom_fonts/font = SubResource( 2 )
 text = "Sample Text"
 align = 1
 valign = 1
