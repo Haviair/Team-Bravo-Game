@@ -8,7 +8,10 @@ var orb = preload("res://Scenes/orb.tscn")
 var player: Node
 var follow_act = false
 var patrol_act = true
-# Called when the node enters the scene tree for the first time.
+
+var ready_to_talk = true
+var Witch_Dialogue = preload("res://Scenes/Textbox.tscn")
+
 func _ready():
     $AnimatedSprite.play("idle")
 
@@ -22,7 +25,7 @@ func _physics_process(_delta):
     #Implement patrol here
     #How to implement: Go back to home base
     #Makes more sense for main boss to go back to a home base since the player has to beat the boss
-    position = Vector2(  4338, -1098 )
+    position = Vector2(  3800, 700 )
 
 func hit():
   #Called from arrow.gd when collision occurs with enemy
@@ -78,3 +81,10 @@ func fire_orb():
   player_pos = self.position.direction_to(player.position)*100
   orb_instance.apply_central_impulse(player_pos)
   get_tree().get_root().call_deferred("add_child", orb_instance)
+
+
+func _on_Area2D_body_entered(body: Node) -> void:
+  if body.get_name() == 'Player':
+    if ready_to_talk == true:
+      var Witch_Talk = Witch_Dialogue.instance()
+      get_tree().get_root().call_deferred("add_child", Witch_Talk)

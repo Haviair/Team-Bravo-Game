@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 var enemy_pos: Vector2
-var run_speed = 350
+var run_speed = 250
 var player: Node
 var health = 100
 

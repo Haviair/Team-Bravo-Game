@@ -3,7 +3,6 @@
 [ext_resource path="res://Art/wolfsheet5.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Enemy_Wolf.gd" type="Script" id=2]
 
-
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 61.3607, 164.143 )
 
@@ -15,47 +14,47 @@ region = Rect2( 320, 960, 160, 320 )
 [sub_resource type="AtlasTexture" id=3]
 flags = 4
 atlas = ExtResource( 1 )
-region = Rect2( 0, 1280, 160, 320 )
+region = Rect2( 0, 640, 160, 320 )
 
 [sub_resource type="AtlasTexture" id=4]
 flags = 4
 atlas = ExtResource( 1 )
-region = Rect2( 160, 1280, 160, 320 )
+region = Rect2( 160, 640, 160, 320 )
 
 [sub_resource type="AtlasTexture" id=5]
 flags = 4
 atlas = ExtResource( 1 )
-region = Rect2( 320, 1280, 160, 320 )
+region = Rect2( 320, 640, 160, 320 )
 
 [sub_resource type="AtlasTexture" id=6]
 flags = 4
 atlas = ExtResource( 1 )
-region = Rect2( 480, 1280, 160, 320 )
+region = Rect2( 480, 640, 160, 320 )
 
 [sub_resource type="AtlasTexture" id=7]
 flags = 4
 atlas = ExtResource( 1 )
-region = Rect2( 640, 1280, 160, 320 )
+region = Rect2( 0, 1280, 160, 320 )
 
 [sub_resource type="AtlasTexture" id=8]
 flags = 4
 atlas = ExtResource( 1 )
-region = Rect2( 0, 640, 160, 320 )
+region = Rect2( 160, 1280, 160, 320 )
 
 [sub_resource type="AtlasTexture" id=9]
 flags = 4
 atlas = ExtResource( 1 )
-region = Rect2( 160, 640, 160, 320 )
+region = Rect2( 320, 1280, 160, 320 )
 
 [sub_resource type="AtlasTexture" id=10]
 flags = 4
 atlas = ExtResource( 1 )
-region = Rect2( 320, 640, 160, 320 )
+region = Rect2( 480, 1280, 160, 320 )
 
 [sub_resource type="AtlasTexture" id=11]
 flags = 4
 atlas = ExtResource( 1 )
-region = Rect2( 480, 640, 160, 320 )
+region = Rect2( 640, 1280, 160, 320 )
 
 [sub_resource type="AtlasTexture" id=12]
 flags = 4
@@ -84,15 +83,15 @@ animations = [ {
 "name": "Stand",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ) ],
-"loop": true,
-"name": "Pounce",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ) ],
+"frames": [ SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ) ],
 "loop": true,
 "name": "Run",
 "speed": 15.0
+}, {
+"frames": [ SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ) ],
+"loop": true,
+"name": "Pounce",
+"speed": 5.0
 }, {
 "frames": [ SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ) ],
 "loop": true,
@@ -108,7 +107,7 @@ extents = Vector2( 35.3423, 68.9182 )
 
 [node name="KinematicBody2D" type="KinematicBody2D"]
 position = Vector2( -1.18921, 0 )
-scale = Vector2( 0.5, 0.5 )
+scale = Vector2( 0.4, 0.4 )
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_horizontal_guides_": [ -350.204 ],
