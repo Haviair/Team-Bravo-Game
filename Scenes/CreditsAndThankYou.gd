@@ -22,6 +22,8 @@ func _ready():
   queue_text("Thank You for Playing!")
   queue_text("Credits")
   queue_text("Javier Gonzalez \t---\t Main Programmer \n Nihal Kumarswamy --- Enemy & Boss Creator/ Github Manager \n Sai Venkata Bhanu Shasank Bonthala --- Level Designer \n Ojus Mamatha Srikanth --- Screen Writer")
+  queue_text("Art\n 9E0 \t---\t Witches Pack \n LuizMelo \t---\t Monsters Creatures Fantasy Pack\n GameSupplyGuy \t---\t Special Material Orbs\n Maytch \t---\t 16x16 Pixel Art 8-Directional Characters\n")
+  queue_text("Sounds\n szegvari \t---\t Dark Castle Atmosphere \n Vital_Sounds \t---\t Open Field September\n")
   queue_text("")
   
 func _process(delta):
