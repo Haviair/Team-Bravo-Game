@@ -22,7 +22,6 @@ func _physics_process(_delta):
 
 func hit():
   #Called from arrow.gd when collision occurs with enemy
-  hp -= 25
   if hp == 0:
     queue_free()
     
