@@ -26,7 +26,7 @@ func _physics_process(_delta):
 
 func hit():
   #Called from arrow.gd when collision occurs with enemy
-  hp -= 25
+  
   $AnimatedSprite.play("damage")
   if hp == 0:
     $AnimatedSprite.play("death")
@@ -75,6 +75,6 @@ func fire_orb():
   var player_pos : Vector2
   orb_instance.position = get_global_position()
   orb_instance.gravity_scale = 0.0
-  player_pos = self.position.direction_to(player.position)*100
+  player_pos = self.position.direction_to(player.position)*200
   orb_instance.apply_central_impulse(player_pos)
   get_tree().get_root().call_deferred("add_child", orb_instance)
