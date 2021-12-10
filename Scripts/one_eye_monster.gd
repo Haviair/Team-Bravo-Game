@@ -1,7 +1,7 @@
 extends KinematicBody2D
 
 onready var shoot_tmr = $shooting_timer
-var hp = 100
+var health = 100
 var run_speed = 200
 var orb = preload("res://Scenes//projectile.tscn")
 var player: Node
@@ -22,7 +22,7 @@ func _physics_process(_delta):
 
 func hit():
   #Called from arrow.gd when collision occurs with enemy
-  if hp == 0:
+  if health == 0:
     queue_free()
     
 func _on_Follow_Detection_body_entered(body):

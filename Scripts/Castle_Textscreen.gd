@@ -19,8 +19,6 @@ var text_queue = []
 func _ready():
   print("Starting state: State.READY")
   hide_textbox()
-  queue_text("*Castle Level Script*")
-  queue_text("*Again Castle Level Script*")
   queue_text("Upon successfully completing the mission tasked to him, the archer returns to the kingdom. Here he is met with yet another task, with not much time to rest. Such is the life of our hero.")
   queue_text("The hero is informed that, while he was away, there have been some significant developments in the castle of Lahin. The castle of Lahin belongs to the old duke K S Lahin.")
   queue_text("The duke, after much turmoil and ill affair, has finally gone crazy in his old age. What is going through his mind, no one can tell.")

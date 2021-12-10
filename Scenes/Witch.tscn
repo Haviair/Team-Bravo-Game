@@ -77,67 +77,67 @@ flags = 4
 atlas = ExtResource( 4 )
 region = Rect2( 0, 336, 32, 48 )
 
-[sub_resource type="AtlasTexture" id=25]
-flags = 4
-atlas = ExtResource( 3 )
-region = Rect2( 0, 0, 32, 48 )
-
-[sub_resource type="AtlasTexture" id=26]
-flags = 4
-atlas = ExtResource( 3 )
-region = Rect2( 0, 48, 32, 48 )
-
-[sub_resource type="AtlasTexture" id=27]
-flags = 4
-atlas = ExtResource( 3 )
-region = Rect2( 0, 96, 32, 48 )
-
 [sub_resource type="AtlasTexture" id=15]
 flags = 4
-atlas = ExtResource( 2 )
+atlas = ExtResource( 3 )
 region = Rect2( 0, 0, 32, 48 )
 
 [sub_resource type="AtlasTexture" id=16]
 flags = 4
-atlas = ExtResource( 2 )
+atlas = ExtResource( 3 )
 region = Rect2( 0, 48, 32, 48 )
 
 [sub_resource type="AtlasTexture" id=17]
 flags = 4
-atlas = ExtResource( 2 )
+atlas = ExtResource( 3 )
 region = Rect2( 0, 96, 32, 48 )
 
 [sub_resource type="AtlasTexture" id=18]
 flags = 4
 atlas = ExtResource( 2 )
-region = Rect2( 0, 144, 32, 48 )
+region = Rect2( 0, 0, 32, 48 )
 
 [sub_resource type="AtlasTexture" id=19]
 flags = 4
 atlas = ExtResource( 2 )
-region = Rect2( 0, 192, 32, 48 )
+region = Rect2( 0, 48, 32, 48 )
 
 [sub_resource type="AtlasTexture" id=20]
 flags = 4
 atlas = ExtResource( 2 )
-region = Rect2( 0, 240, 32, 48 )
+region = Rect2( 0, 96, 32, 48 )
 
 [sub_resource type="AtlasTexture" id=21]
 flags = 4
 atlas = ExtResource( 2 )
-region = Rect2( 0, 288, 32, 48 )
+region = Rect2( 0, 144, 32, 48 )
 
 [sub_resource type="AtlasTexture" id=22]
 flags = 4
 atlas = ExtResource( 2 )
-region = Rect2( 0, 336, 32, 48 )
+region = Rect2( 0, 192, 32, 48 )
 
 [sub_resource type="AtlasTexture" id=23]
 flags = 4
 atlas = ExtResource( 2 )
-region = Rect2( 0, 384, 32, 48 )
+region = Rect2( 0, 240, 32, 48 )
 
 [sub_resource type="AtlasTexture" id=24]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 0, 288, 32, 48 )
+
+[sub_resource type="AtlasTexture" id=25]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 0, 336, 32, 48 )
+
+[sub_resource type="AtlasTexture" id=26]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 0, 384, 32, 48 )
+
+[sub_resource type="AtlasTexture" id=27]
 flags = 4
 atlas = ExtResource( 2 )
 region = Rect2( 0, 432, 32, 48 )
@@ -179,12 +179,12 @@ animations = [ {
 "name": "run",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 25 ), SubResource( 26 ), SubResource( 27 ) ],
+"frames": [ SubResource( 15 ), SubResource( 16 ), SubResource( 17 ) ],
 "loop": false,
 "name": "damage",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ) ],
+"frames": [ SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ) ],
 "loop": false,
 "name": "death",
 "speed": 5.0
@@ -205,6 +205,7 @@ radius = 276.0
 radius = 130.004
 
 [node name="Witch" type="KinematicBody2D"]
+scale = Vector2( 2, 2 )
 collision_layer = 4
 script = ExtResource( 6 )
 

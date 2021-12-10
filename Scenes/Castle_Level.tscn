@@ -344,12 +344,12 @@ whichLevel = 5
 
 [node name="Portal6" parent="." instance=ExtResource( 18 )]
 position = Vector2( 2080, -912 )
-rotation = 1.56033
+rotation = 1.5708
 whichLevel = 6
 
 [node name="Portal7" parent="." instance=ExtResource( 18 )]
 position = Vector2( 2080, -1160 )
-rotation = 7.8503
+rotation = 1.5708
 whichLevel = 7
 
 [node name="Portal2" parent="." instance=ExtResource( 18 )]
@@ -396,5 +396,13 @@ position = Vector2( 4413.6, -346.428 )
 [node name="Enemy_Mage8" parent="." instance=ExtResource( 25 )]
 position = Vector2( 3561.5, -924.965 )
 
+[node name="Chest2" parent="." instance=ExtResource( 23 )]
+position = Vector2( 573.912, 127.697 )
+
+[node name="Chest3" parent="." instance=ExtResource( 23 )]
+position = Vector2( 2410.36, -735.941 )
+
 [connection signal="body_entered" from="end_portal" to="end_portal" method="_on_body_entered"]
 [connection signal="body_entered" from="Chest" to="Chest" method="_on_Chest_body_entered"]
+[connection signal="body_entered" from="Chest2" to="Chest2" method="_on_Chest_body_entered"]
+[connection signal="body_entered" from="Chest3" to="Chest3" method="_on_Chest_body_entered"]

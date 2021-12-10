@@ -2,7 +2,7 @@
 extends KinematicBody2D
 
 onready var shoot_tmr = $orb_shooting_timer
-var hp = 100
+var health = 100
 var run_speed = 200
 var orb = preload("res://Scenes/orb.tscn")
 var player: Node
@@ -28,7 +28,7 @@ func hit():
   #Called from arrow.gd when collision occurs with enemy
   
   $AnimatedSprite.play("damage")
-  if hp == 0:
+  if health == 0:
     $AnimatedSprite.play("death")
     yield($AnimatedSprite, "animation_finished")
     queue_free()

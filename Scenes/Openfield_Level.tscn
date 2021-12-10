@@ -205,10 +205,10 @@ rect_rotation = -0.185486
 position = Vector2( -1858.79, -143.675 )
 
 [node name="Old_Man" parent="." instance=ExtResource( 13 )]
-position = Vector2( -2120.23, -1605.23 )
+position = Vector2( -2103.41, -1275.6 )
 
 [node name="Chest" parent="." instance=ExtResource( 14 )]
-position = Vector2( -2032.52, -1605.37 )
+position = Vector2( -2009.03, -1268.95 )
 
 [node name="Power-Ups" parent="." instance=ExtResource( 15 )]
 
@@ -227,5 +227,13 @@ position = Vector2( -1697.88, 571.164 )
 [node name="Enemy_Wolf5" parent="." instance=ExtResource( 16 )]
 position = Vector2( -1160.28, -1357.76 )
 
+[node name="Chest2" parent="." instance=ExtResource( 14 )]
+position = Vector2( 1003.46, 144.536 )
+
+[node name="Chest3" parent="." instance=ExtResource( 14 )]
+position = Vector2( 1896.33, -645.804 )
+
 [connection signal="body_entered" from="End_Portal" to="End_Portal" method="_on_body_entered"]
 [connection signal="body_entered" from="Chest" to="Chest" method="_on_Chest_body_entered"]
+[connection signal="body_entered" from="Chest2" to="Chest2" method="_on_Chest_body_entered"]
+[connection signal="body_entered" from="Chest3" to="Chest3" method="_on_Chest_body_entered"]
