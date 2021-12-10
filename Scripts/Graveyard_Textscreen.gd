@@ -22,7 +22,7 @@ func _ready():
   queue_text("This kingdom is inhabited by all sorts of creatures and various races like elf, beastman, and human to name some.")
   queue_text("There are many things one can do to earn ones bread. One of the most profound professions is that of the warrior. There are several types of warriors: swordsman, brute, mage, healer, and even archer, just to name some.")
   queue_text("Some join guilds, some work for the kingdom fulltime, and some take missions on commission.")
-  queue_text("There is a heirarchy among the warrior classes that ranks one to be 'above' or 'better' than the other. The archer class is among the lowest and considered the weakest and looked down upon by every other.")
+  queue_text("There is a hierarchy  among the warrior classes that ranks one to be 'above' or 'better' than the other. The archer class is among the lowest and considered the weakest and looked down upon by every other.")
   queue_text("Enter our HERO, a human warrior, an archer to be specific, who sets out to prove that the archer class is strong and reliable too and has its own merits and wants those around him to stop looking down on the class and remove their prejudice.")
   queue_text("He sets out to do this by completing demanding missions fruitfully and gaining the favor of the kingdom.")
   queue_text("He looks up the missions posted. He finds one stating that the local graveyard has been infested with evil sprits and that someone is to investigate the matter. Deciding he must start somewhere, he embarks on this mission.")
