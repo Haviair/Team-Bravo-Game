@@ -19,11 +19,17 @@ var text_queue = []
 func _ready():
   print("Starting state: State.READY")
   hide_textbox()
-  queue_text("Thank You for Playing!")
-  queue_text("Credits")
-  queue_text("Javier Gonzalez \t---\t Main Programmer \n Nihal Kumarswamy --- Enemy & Boss Creator/ Github Manager \n Sai Venkata Bhanu Shasank Bonthala --- Level Designer \n Ojus Mamatha Srikanth --- Screen Writer")
-  queue_text("Art\n 9E0 \t---\t Witches Pack \n LuizMelo \t---\t Monsters Creatures Fantasy Pack\n GameSupplyGuy \t---\t Special Material Orbs\n Maytch \t---\t 16x16 Pixel Art 8-Directional Characters\n")
-  queue_text("Sounds\n szegvari \t---\t Dark Castle Atmosphere \n Vital_Sounds \t---\t Open Field September\n")
+  
+  queue_text("Our hero now finds himself in a meeting with an official of the kingdom.")
+  queue_text("Official: I want to congratualte you on behalf of the kingdom. Your good deeds aren't going unnoticed.")
+  queue_text("Hero: I'm honored. You didnt need to come all the way here to tell me that though, really. Something tells me you're here to do more than give me a pat on the back. What's up? ")
+  queue_text("Official: Sharp aren't you. Yes, I come with some information. For quite some time now, there has been an increased level of danger in the land just outside the kingdom.")
+  queue_text("Official: At first we just played it off as wild animals and predators getting hungrier and more desperate, so we thought we'd just observe. With time, the agression has only increased.")
+  queue_text("Official: There have been several cases of mission children and disappearing kids in that area, mostly among the people that live on the border and outskirts near there.")
+  queue_text("Hero: So what do u guys think is really going on..?")
+  queue_text("Official: Nothing is 100% so far...we're accounting the behaviour of the animals to some vengeful spirits upsetting the balance and making them go crazy. That's where you come in, actually...")
+  queue_text("Official: We were hoping you could take a look yourself and see if you can find some evidence that points to some conclusion, or points in any plausible direction really...")
+  queue_text("Hero: I will head out early tomorrow and resolve the issue")
   queue_text("")
   
 func _process(delta):
@@ -41,7 +47,7 @@ func _process(delta):
         change_state(State.READY)
         hide_textbox()
   if text_queue.empty() == true:
-    get_tree().quit()
+      get_tree().change_scene_to(next_scene)
 
 func queue_text(next_text):
   text_queue.push_back(next_text)
