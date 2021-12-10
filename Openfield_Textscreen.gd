@@ -19,14 +19,19 @@ var text_queue = []
 func _ready():
   print("Starting state: State.READY")
   hide_textbox()
-  queue_text("Upon successfully completing the mission tasked to him, the archer returns to the kingdom. Here he is met with yet another task, with not much time to rest. Such is the life of our hero.")
-  queue_text("The hero is informed that, while he was away, there have been some significant developments in the castle of Lahin. The castle of Lahin belongs to the old duke K S Lahin.")
-  queue_text("The duke, after much turmoil and ill affair, has finally gone crazy in his old age. What is going through his mind, no one can tell.")
-  queue_text("But we can be sure of one thing, he has taken his maidservants hostage in his own home, after locking them in for several weeks. ")
-  queue_text("Friends and strangers alike tried to reason with him, none were granted an audience in his castle nor were their words heeded")
-  queue_text("The duke must be stopped and his hostages must be freed before harm comes their way. This is the immediate task of the hero now. After a few minutes of getting his bearings in place, he makes his way to Castle Lahin.")
-  queue_text("Lahin: 'HALT. WHO GOES THERE'. Hero: ' I am here to put an end to this madness. Release your servants at once!' Lahin: ' AHAHAHAHAHAH. YOU THINK U CAN STOP ME?!?! I Will sacrifice them to the powers of evil and gain their favor. ehehehe' Hero: ' I can and I will! Let me in and I'll show you TRUE power..!' Lahin: 'We'll see what power you can put on display! Mehehehe....' ")
-  queue_text("Our Hero has no idea what kind of madness and foes he will encounter here. All he hopes to do is stop the duke and rescue those maidservants swiftly. ")
+  
+  queue_text("Our hero now finds himself in a meeting with an official of the kingdom.")
+  queue_text("Official: I want to congratualte you on behalf of the kingdom. Your good deeds aren't going unnoticed.")
+  queue_text("Hero: I'm honored. You didnt need to come all the way here to tell me that though, really. Something tells me you're here to do more than give me a pat on the back. What's up? ")
+  queue_text("Official: Sharp aren't you. Yes, I come with some information. For quite some time now, there has been an increased level of danger in the land just outside the kingdom.")
+  queue_text("Official: At first we just played it off as wild animals and predators getting hungrier and more desperate, so we thought we'd just observe. With time, the agression has only increased.")
+  queue_text("Official: There have been several cases of mission children and disappearing kids in that area, mostly among the people that live on the border and outskirts near there.")
+  queue_text("Hero: So what do u guys think is really going on..?")
+  queue_text("Official: Nothing is 100% so far...we're accounting the behaviour of the animals to some vengeful spirits upsetting the balance and making them go crazy. That's where you come in, actually...")
+  queue_text("Official: We were hoping you could take a look yourself and see if you can find some evidence that points to some conclusion, or points in any plausible direction really...")
+  queue_text("Hero: I will head out early tomorrow and resolve the issue")
+  queue_text("")
+  
 func _process(delta):
   match current_state:
     State.READY:
