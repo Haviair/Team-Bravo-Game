@@ -16,6 +16,10 @@ var multishot = false
 var diagonalshot = false
 var arrow_dmg = 10
 
+
+export(String, FILE) var next_scene_path: = ""
+
+
 var in_graveyard = true
 var in_castle = false
 var in_field = false
@@ -138,7 +142,7 @@ func _physics_process(delta):
   if hp <= 0: 
     $AudioStreamPlayer.stream = preload("res://Music/player_grunt.wav")
     $AudioStreamPlayer.play()
-    queue_free()
+    die()
 
 func fire():
   var arrow_instance = arrow.instance()
@@ -277,3 +281,6 @@ func gotoLevel( which : int = -1 ) -> void :
 func increase_dmg():
   arrow_dmg += 10
 
+func die() -> void:
+  queue_free()
+  get_tree().change_scene(next_scene_path)
