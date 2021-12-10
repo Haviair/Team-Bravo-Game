@@ -26,7 +26,7 @@ func _ready():
   queue_text("Enter our HERO, a human warrior, an archer to be specific, who sets out to prove that the archer class is strong and reliable too and has its own merits and wants those around him to stop looking down on the class and remove their prejudice.")
   queue_text("He sets out to do this by completing demanding missions fruitfully and gaining the favor of the kingdom.")
   queue_text("He looks up the missions posted. He finds one stating that the local graveyard has been infested with evil sprits and that someone is to investigate the matter. Deciding he must start somewhere, he embarks on this mission.")
-  queue_text("The Hero goes to the graveyard and lais in wait, hidden from sight. He sees bandits arriving. ")
+  queue_text("The Hero goes to the graveyard and waits, hidden from sight. He sees bandits arriving. ")
   queue_text("Bandit 1: ' hatching an idea to make a quick buck selling valuables buried with the dead was a good one '. Bandit 2: ' These people are all DEAD, they wont be needing these anymore anyway. ' The hero makes his presence known. Hero: ' STOP! let the departed rest in peace. you will all have to pay for your crimes '. ")
   queue_text("The bandits attack our Hero. The spirits of the departed, whose eternal rest was disturbed, have come, in the corporeal form of ghosts, to exact vengeance on their wrongdoers. The bandits take this as a sign to retreat with their tails tucked behind their legs. The hero however, must defeat them and let them go back to their eternal slumber.")
   
