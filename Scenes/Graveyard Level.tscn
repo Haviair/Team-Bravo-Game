@@ -406,7 +406,7 @@ next_scene = ExtResource( 20 )
 position = Vector2( 2404.46, 666.897 )
 
 [node name="Chest3" parent="." instance=ExtResource( 19 )]
-position = Vector2( 361.813, -841.778 )
+position = Vector2( 506.896, -839.4 )
 
 [connection signal="body_entered" from="Chest" to="Chest" method="_on_Chest_body_entered"]
 [connection signal="body_entered" from="end_portal" to="end_portal" method="_on_body_entered"]

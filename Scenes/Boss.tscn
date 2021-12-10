@@ -31,7 +31,7 @@ __meta__ = {
 position = Vector2( 7.34498, -2.91373 )
 frames = SubResource( 1 )
 animation = "New Anim"
-frame = 1
+frame = 3
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -43,6 +43,7 @@ collision_layer = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Detection Zone"]
 position = Vector2( 0.20932, -0.166332 )
+scale = Vector2( 1.5, 1.5 )
 shape = SubResource( 3 )
 
 [connection signal="body_entered" from="Detection Zone" to="." method="_on_Detection_Zone_body_entered"]
