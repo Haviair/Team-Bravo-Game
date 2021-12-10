@@ -19,6 +19,9 @@ var text_queue = []
 func _ready():
   print("Starting state: State.READY")
   hide_textbox()
+  queue_text("After dealing with the enmies, the hero is engaged by an apparation. Apparation: 'I am Unahb! the guardian spirit of these lands. I was in a deep slumber and all peace was ensuring. Some eveil villains came here and woke me, inciting my wrath. No one disturbs my slumber '. Hero: 'Who were they? any leads would help.. ' Unabh: 'that I cannot say, for I do not know myself. Some mysterious cloaked characters.. They left just as swiftly as they came.' ")
+  queue_text("Hero: 'thats not good. more evil doers is the last thing the kingdom needs right now..not to mention powerful ones..I dont think waking u from ur slumber is an easy task..right? '. Unabh: 'it is not..how they did so, i wonder. it has been a while since someone that powerful came along...'. Hero: 'the kingdom will have to proceeed with caution moving forward. we have no idea what we are up against.. I take my leave. Please go back to your sulmber.'. Unabh: 'that I will. take care hero..' ")
+  queue_text("Back in the kingdom, the hero is met with the official. Official: 'So that is what happened...The kingdom will have to be placed on high alert.discreetly.cant have the good people panicked. Anyway hero, great job again. Take some rest..you deserve it")
   queue_text("Thank You for Playing!")
   queue_text("Credits")
   queue_text("Javier Gonzalez \t---\t Main Programmer \n Nihal Kumarswamy --- Enemy & Boss Creator/ Github Manager \n Sai Venkata Bhanu Shasank Bonthala --- Level Designer \n Ojus Mamatha Srikanth --- Screen Writer")
