@@ -8,7 +8,7 @@ var speed = 1000
 var walk_speed = 150
 var velocity = Vector2.ZERO
 var blast = preload("res://Scenes/MageBlast.tscn")
-var health = 80
+var health = 50
 var danger_zone = false
 var player: Node
 var enemy_pos: Vector2
