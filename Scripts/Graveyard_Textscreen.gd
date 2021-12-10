@@ -19,7 +19,7 @@ var text_queue = []
 func _ready():
   hide_textbox()
   queue_text("Welcome to the kingdom of Writtenburg. It is a land of many wonders and even more mysteries. It hasn't quite caught up to the modern world yet. ")
-  queue_text("This kingdom is inhabited by all sorts of creatures and various races like elf, beastman, and human to name some.")
+  queue_text("This kingdom is inhabited by all sorts of creatures and various races like elf, beastman, and humans to name some.")
   queue_text("There are many things one can do to earn ones bread. One of the most profound professions is that of the warrior. There are several types of warriors: swordsman, brute, mage, healer, and even archer, just to name some.")
   queue_text("Some join guilds, some work for the kingdom fulltime, and some take missions on commission.")
   queue_text("There is a hierarchy  among the warrior classes that ranks one to be 'above' or 'better' than the other. The archer class is among the lowest and considered the weakest and looked down upon by every other.")
