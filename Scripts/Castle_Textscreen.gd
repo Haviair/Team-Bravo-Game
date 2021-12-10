@@ -18,14 +18,17 @@ var text_queue = []
 
 func _ready():
   hide_textbox()
-  queue_text("Upon successfully completing the mission tasked to him, the archer returns to the kingdom. Here he is met with yet another task, with not much time to rest. Such is the life of our hero.")
+  queue_text("Upon successfully completing the mission, the archer returns to the kingdom. Here he is met with another task, with not much time to rest. Such is the life of our hero.")
   queue_text("The hero is informed that, while he was away, there have been some significant developments in the castle of Lahin. The castle of Lahin belongs to the old duke K S Lahin.")
   queue_text("The duke, after much turmoil and ill affair, has finally gone crazy in his old age. What is going through his mind, no one can tell.")
   queue_text("But we can be sure of one thing, he has taken his maidservants hostage in his own home, after locking them in for several weeks. ")
-  queue_text("Friends and strangers alike tried to reason with him, none were granted an audience in his castle nor were their words heeded")
+  queue_text("Friends and strangers alike tried to reason with him, none were granted an audience in his castle nor were their words heeded.")
   queue_text("The duke must be stopped and his hostages must be freed before harm comes their way. This is the immediate task of the hero now. After a few minutes of getting his bearings in place, he makes his way to Castle Lahin.")
-  queue_text("Lahin: 'HALT. WHO GOES THERE'. Hero: ' I am here to put an end to this madness. Release your servants at once!' Lahin: ' AHAHAHAHAHAH. YOU THINK U CAN STOP ME?!?! I Will sacrifice them to the powers of evil and gain their favor. ehehehe' Hero: ' I can and I will! Let me in and I'll show you TRUE power..!' Lahin: 'We'll see what power you can put on display! Mehehehe....' ")
-  queue_text("Our Hero has no idea what kind of madness and foes he will encounter here. All he hopes to do is stop the duke and rescue those maidservants swiftly. ")
+  queue_text("Lahin: HALT. WHO GOES THERE? \n Hero: I am here to put an end to this madness. Release your servants at once! \n Lahin: AHAHAHAHAHAH. YOU THINK U CAN STOP ME?!?! I will sacrifice them to the powers of evil and become invincible.")
+  queue_text("Hero: I can and I will! Let me in and I'll show you my TRUE power! \n Lahin: We shall see what power you can put on display! Mehehehe....")
+  queue_text("Our Hero has no idea what kind of madness and foes he will encounter here. All he hopes to do is stop the duke and rescue those maidservants swiftly.")
+  queue_text("")
+  
 func _process(delta):
   match current_state:
     State.READY:

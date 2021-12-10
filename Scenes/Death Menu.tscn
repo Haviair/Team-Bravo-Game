@@ -101,6 +101,5 @@ custom_fonts/font = SubResource( 8 )
 text = "Quit"
 script = ExtResource( 5 )
 
-[connection signal="pressed" from="VBoxContainer/retry" to="VBoxContainer/retry" method="_on_retry_pressed"]
 [connection signal="pressed" from="VBoxContainer/Menu" to="VBoxContainer/Menu" method="_on_Menu_pressed"]
 [connection signal="pressed" from="VBoxContainer/Quit" to="VBoxContainer/Quit" method="_on_Quit_pressed"]

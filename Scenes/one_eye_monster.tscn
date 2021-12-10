@@ -3,77 +3,79 @@
 [ext_resource path="res://Scripts/one_eye_monster.gd" type="Script" id=2]
 [ext_resource path="res://Art/Flying Eye/Attack3.png" type="Texture" id=3]
 
-[sub_resource type="AtlasTexture" id=30]
+[sub_resource type="AtlasTexture" id=11]
 flags = 4
 atlas = ExtResource( 3 )
-region = Rect2( 0, 0, 150, 150 )
+region = Rect2( 0, 0, 600, 600 )
 
-[sub_resource type="AtlasTexture" id=31]
+[sub_resource type="AtlasTexture" id=12]
 flags = 4
 atlas = ExtResource( 3 )
-region = Rect2( 150, 0, 150, 150 )
+region = Rect2( 600, 0, 600, 600 )
 
-[sub_resource type="AtlasTexture" id=32]
+[sub_resource type="AtlasTexture" id=13]
 flags = 4
 atlas = ExtResource( 3 )
-region = Rect2( 300, 0, 150, 150 )
+region = Rect2( 1200, 0, 600, 600 )
 
-[sub_resource type="AtlasTexture" id=33]
+[sub_resource type="AtlasTexture" id=14]
 flags = 4
 atlas = ExtResource( 3 )
-region = Rect2( 450, 0, 150, 150 )
+region = Rect2( 1800, 0, 600, 600 )
 
-[sub_resource type="AtlasTexture" id=34]
+[sub_resource type="AtlasTexture" id=15]
 flags = 4
 atlas = ExtResource( 3 )
-region = Rect2( 600, 0, 150, 150 )
+region = Rect2( 2400, 0, 600, 600 )
 
-[sub_resource type="AtlasTexture" id=35]
+[sub_resource type="AtlasTexture" id=16]
 flags = 4
 atlas = ExtResource( 3 )
-region = Rect2( 750, 0, 150, 150 )
+region = Rect2( 3000, 0, 600, 600 )
 
-[sub_resource type="SpriteFrames" id=9]
+[sub_resource type="SpriteFrames" id=7]
 animations = [ {
-"frames": [ SubResource( 30 ), SubResource( 31 ), SubResource( 32 ), SubResource( 33 ), SubResource( 34 ), SubResource( 35 ) ],
+"frames": [ SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ) ],
 "loop": true,
 "name": "idle",
 "speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=10]
-extents = Vector2( 35.1532, 39.2048 )
+[sub_resource type="CircleShape2D" id=17]
+radius = 65.3421
 
-[sub_resource type="CircleShape2D" id=29]
-radius = 276.0
+[sub_resource type="CircleShape2D" id=9]
+radius = 778.683
 
-[sub_resource type="CircleShape2D" id=28]
-radius = 130.004
+[sub_resource type="CircleShape2D" id=10]
+radius = 301.851
 
 [node name="monster" type="KinematicBody2D"]
 collision_layer = 4
 script = ExtResource( 2 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-position = Vector2( -9, -7 )
-scale = Vector2( 2.5, 2.5 )
-frames = SubResource( 9 )
+position = Vector2( -4.32307, -5.12923 )
+frames = SubResource( 7 )
 animation = "idle"
+frame = 2
+playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 4.7622, -1.5874 )
-shape = SubResource( 10 )
+position = Vector2( 20.218, 2.7459 )
+shape = SubResource( 17 )
 
 [node name="Follow Detection" type="Area2D" parent="."]
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Follow Detection"]
-position = Vector2( 4, -1 )
-shape = SubResource( 29 )
+position = Vector2( 4, -1.79279 )
+shape = SubResource( 9 )
 
 [node name="shooting zone" type="Area2D" parent="."]
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="shooting zone"]
-shape = SubResource( 28 )
+position = Vector2( 19.6167, 1.84775 )
+shape = SubResource( 10 )
 
 [node name="shooting_timer" type="Timer" parent="."]
 
