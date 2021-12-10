@@ -6,6 +6,7 @@ var diagnol = preload("res://Scenes/Diagnol-shoot.tscn")
 var dmgup = preload("res://Scenes/Dmg_Up.tscn")
 var not_empty = true
 var cur_lvl
+
 func _ready() -> void:
   pass # Replace with function body.
   

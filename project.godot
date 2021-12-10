@@ -14,10 +14,6 @@ config/name="Bravo-Game"
 run/main_scene="res://Scenes/MainScreen.tscn"
 config/icon="res://icon.png"
 
-[autoload]
-
-PlayerDeath="*res://Scenes/Player_death.tscn"
-
 [display]
 
 window/size/width=1280
