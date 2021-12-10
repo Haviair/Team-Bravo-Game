@@ -17,7 +17,6 @@ var current_state = State.READY
 var text_queue = []
 
 func _ready():
-  print("Starting state: State.READY")
   hide_textbox()
   
   queue_text("Our hero now finds himself in a meeting with an official of the kingdom.")
@@ -70,13 +69,6 @@ func display_text():
 
 func change_state(next_state):
   current_state = next_state
-  match current_state:
-    State.READY:
-      print("Changing state to: State.READY")
-    State.READING:
-      print("Changing state to: State.READING")
-    State.FINISHED:
-      print("Changing state to: State.FINISHED")
 
 func _on_Tween_tween_completed(object, key):
   change_state(State.FINISHED)

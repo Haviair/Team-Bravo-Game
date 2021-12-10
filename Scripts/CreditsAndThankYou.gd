@@ -17,7 +17,6 @@ var current_state = State.READY
 var text_queue = []
 
 func _ready():
-  print("Starting state: State.READY")
   hide_textbox()
   queue_text("After dealing with the enmies, the hero is engaged by an apparation. Apparation: 'I am Unahb! the guardian spirit of these lands. I was in a deep slumber and all peace was ensuring. Some eveil villains came here and woke me, inciting my wrath. No one disturbs my slumber '. Hero: 'Who were they? any leads would help.. ' Unabh: 'that I cannot say, for I do not know myself. Some mysterious cloaked characters.. They left just as swiftly as they came.' ")
   queue_text("Hero: 'thats not good. more evil doers is the last thing the kingdom needs right now..not to mention powerful ones..I dont think waking u from ur slumber is an easy task..right? '. Unabh: 'it is not..how they did so, i wonder. it has been a while since someone that powerful came along...'. Hero: 'the kingdom will have to proceeed with caution moving forward. we have no idea what we are up against.. I take my leave. Please go back to your sulmber.'. Unabh: 'that I will. take care hero..' ")
@@ -67,13 +66,6 @@ func display_text():
 
 func change_state(next_state):
   current_state = next_state
-  match current_state:
-    State.READY:
-      print("Changing state to: State.READY")
-    State.READING:
-      print("Changing state to: State.READING")
-    State.FINISHED:
-      print("Changing state to: State.FINISHED")
 
 func _on_Tween_tween_completed(object, key):
   change_state(State.FINISHED)

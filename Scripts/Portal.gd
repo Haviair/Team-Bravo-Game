@@ -22,15 +22,12 @@ func _on_Portal_body_entered( body : PhysicsBody2D ) -> void :
 #  print("player position before portal ", body.get_global_position())  
 
   body.gotoLevel( whichLevel + 1 )
-#
-  print("player position after portal ", body.get_global_position())
 
 func _on_body_entered(body: PhysicsBody2D):
   teleport()
   
 func teleport() -> void:
   get_tree().change_scene_to(next_scene)
-  print("I changed scenes")
     
   
 

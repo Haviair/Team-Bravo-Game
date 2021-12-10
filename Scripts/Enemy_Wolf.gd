@@ -44,7 +44,7 @@ func pounce():
   velocity = move_and_slide(Vector2.ZERO)
   $AnimatedSprite.play("Pounce")
   attackTimer.start()
-  print("I am running")
+  
 
 
 func _on_Area2D_body_exited(body: Node) -> void:
@@ -88,7 +88,6 @@ func idle_walk():
     
 
 func _on_Against_body_entered(body: Node) -> void:
-  print(body.get_name())
   if body.get_name() == "Map Layout" and player == null:
     idle_walk()
   elif body.get_name() == "Map Layout" and player != null:

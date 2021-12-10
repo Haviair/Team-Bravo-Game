@@ -216,12 +216,10 @@ func _enemy_body_entered(body: Node):
   elif 'Orb' in body.get_name():
     body.remove()
     hp -= 10
-    print(cur_lvl)
     get_tree().root.get_node(cur_lvl+"/CanvasLayer2/Player_UI/Healthbar").value = hp
   elif 'projectile' in body.get_name():
     body.remove()
     hp -= 10
-    print(cur_lvl)
     get_tree().root.get_node(cur_lvl+"/CanvasLayer2/Player_UI/Healthbar").value = hp
 func _enemy_body_exited(body: Node):
   if 'Enemy' in body.get_name():
@@ -241,7 +239,6 @@ func gotoLevel( which : int = -1 ) -> void :
       which = currentLevel
 
     if which >= graveyard_level.size() :
-      print( "Finished last level, so going back to the beginning." )
       which = 0
 
     position = graveyard_level[which][ 'StartPosition' ]
@@ -255,7 +252,6 @@ func gotoLevel( which : int = -1 ) -> void :
       which = currentLevel
 
     if which >= castle_level.size() :
-      print( "Finished last level, so going back to the beginning." )
       which = 0
 
     position = castle_level[which][ 'StartPosition' ]
@@ -269,7 +265,6 @@ func gotoLevel( which : int = -1 ) -> void :
       which = currentLevel
 
     if which >= openfield_level.size() :
-      print( "Finished last level, so going back to the beginning." )
       which = 0
 
     position = openfield_level[which][ 'StartPosition' ]

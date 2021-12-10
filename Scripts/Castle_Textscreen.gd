@@ -17,7 +17,6 @@ var current_state = State.READY
 var text_queue = []
 
 func _ready():
-  print("Starting state: State.READY")
   hide_textbox()
   queue_text("Upon successfully completing the mission tasked to him, the archer returns to the kingdom. Here he is met with yet another task, with not much time to rest. Such is the life of our hero.")
   queue_text("The hero is informed that, while he was away, there have been some significant developments in the castle of Lahin. The castle of Lahin belongs to the old duke K S Lahin.")
@@ -65,13 +64,6 @@ func display_text():
 
 func change_state(next_state):
   current_state = next_state
-  match current_state:
-    State.READY:
-      print("Changing state to: State.READY")
-    State.READING:
-      print("Changing state to: State.READING")
-    State.FINISHED:
-      print("Changing state to: State.FINISHED")
 
 func _on_Tween_tween_completed(object, key):
   change_state(State.FINISHED)
