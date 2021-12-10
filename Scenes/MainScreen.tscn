@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Scenes/Start.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Quit.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Art/Black.png" type="Texture" id=3]
+[ext_resource path="res://Scripts/Quit.gd" type="Script" id=4]
 
 [sub_resource type="DynamicFontData" id=1]
 font_path = "res://Misc Assests/Adventurer.ttf"
@@ -43,8 +44,8 @@ margin_left = 207.419
 margin_top = 219.966
 margin_right = 1131.42
 margin_bottom = 319.966
-custom_colors/font_color = Color( 0.992157, 1, 0, 1 )
 custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.992157, 1, 0, 1 )
 text = "Archer's Redemption"
 align = 1
 valign = 1
@@ -67,8 +68,8 @@ margin_top = 122.0
 margin_right = 575.0
 margin_bottom = 179.0
 theme = SubResource( 3 )
-custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
 custom_fonts/font = SubResource( 5 )
+custom_colors/font_color_disabled = Color( 0, 0, 0, 1 )
 text = "Play"
 next_scene_path = "res://Scenes/Graveyard_Textscreen.tscn"
 
@@ -78,5 +79,7 @@ margin_right = 575.0
 margin_bottom = 240.0
 custom_fonts/font = SubResource( 7 )
 text = "Quit"
+script = ExtResource( 4 )
 
 [connection signal="button_up" from="Menu/Start" to="Menu/Start" method="_on_button_up"]
+[connection signal="pressed" from="Menu/Quit" to="Menu/Quit" method="_on_Quit_pressed"]

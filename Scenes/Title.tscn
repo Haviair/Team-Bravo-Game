@@ -1,0 +1,7 @@
+[gd_scene format=2]
+
+[node name="Label" type="Label"]
+margin_left = 375.0
+margin_top = 141.0
+margin_right = 875.0
+margin_bottom = 205.0
