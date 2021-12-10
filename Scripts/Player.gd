@@ -211,7 +211,7 @@ func _enemy_body_entered(body: Node):
     en_dmg_timer.start()
   elif 'Orb' in body.get_name():
     body.remove()
-    hp -= 25
+    hp -= 10
     print(cur_lvl)
     get_tree().root.get_node(cur_lvl+"/CanvasLayer2/Player_UI/Healthbar").value = hp
   elif 'projectile' in body.get_name():
