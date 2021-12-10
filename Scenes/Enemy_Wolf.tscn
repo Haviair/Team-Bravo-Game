@@ -54,27 +54,27 @@ region = Rect2( 480, 640, 160, 320 )
 [sub_resource type="AtlasTexture" id=11]
 flags = 4
 atlas = ExtResource( 1 )
-region = Rect2( 0, 640, 160, 320 )
+region = Rect2( 320, 960, 160, 320 )
 
 [sub_resource type="AtlasTexture" id=12]
 flags = 4
 atlas = ExtResource( 1 )
-region = Rect2( 160, 640, 160, 320 )
+region = Rect2( 0, 640, 160, 320 )
 
 [sub_resource type="AtlasTexture" id=13]
 flags = 4
 atlas = ExtResource( 1 )
-region = Rect2( 320, 640, 160, 320 )
+region = Rect2( 160, 640, 160, 320 )
 
 [sub_resource type="AtlasTexture" id=14]
 flags = 4
 atlas = ExtResource( 1 )
-region = Rect2( 480, 640, 160, 320 )
+region = Rect2( 320, 640, 160, 320 )
 
 [sub_resource type="AtlasTexture" id=15]
 flags = 4
 atlas = ExtResource( 1 )
-region = Rect2( 320, 960, 160, 320 )
+region = Rect2( 480, 640, 160, 320 )
 
 [sub_resource type="SpriteFrames" id=16]
 animations = [ {
@@ -85,22 +85,22 @@ animations = [ {
 }, {
 "frames": [ SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ) ],
 "loop": true,
-"name": "Walk",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ) ],
-"loop": true,
 "name": "Run",
 "speed": 15.0
 }, {
-"frames": [ SubResource( 15 ) ],
+"frames": [ SubResource( 11 ) ],
 "loop": true,
 "name": "Stand",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ) ],
+"loop": true,
+"name": "Walk",
 "speed": 5.0
 } ]
 
 [sub_resource type="CircleShape2D" id=17]
-radius = 758.683
+radius = 752.192
 
 [sub_resource type="RectangleShape2D" id=18]
 extents = Vector2( 27.1132, 59.1356 )
